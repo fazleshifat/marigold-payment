@@ -50,18 +50,18 @@ const Banner = () => {
                 onSwiper={(swiper) => console.log(swiper)}
             >
                 <SwiperSlide>
-                    <img className='w-full mx-auto' src="/assets/slide-4.png" alt="slide" srcset="" />
+                    <img className='w-full mx-auto' src="/assets/slide-4.png" alt="slide"  />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img className='w-10/12 mx-auto' src="/assets/slide-1.png" alt="slide" srcset="" />
+                    <img className='w-10/12 mx-auto' src="/assets/slide-1.png" alt="slide"  />
                 </SwiperSlide>
 {/* 
                 <SwiperSlide>
-                    <img className='w-10/12 mx-auto' src="/assets/slide-2.jpg" alt="slide" srcset="" />
+                    <img className='w-10/12 mx-auto' src="/assets/slide-2.jpg" alt="slide"  />
                 </SwiperSlide> */}
 
                 <SwiperSlide>
-                    <img className='w-10/12 mx-auto' src="/assets/slide-3.png" alt="slide" srcset="" />
+                    <img className='w-10/12 mx-auto' src="/assets/slide-3.png" alt="slide"  />
 
                 </SwiperSlide>
 
