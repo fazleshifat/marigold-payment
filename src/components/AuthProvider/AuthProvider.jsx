@@ -48,6 +48,7 @@ const AuthProvider = ({ children }) => {
     const authData = {
         user,
         setUser,
+        loading,
         userImageURL,
         setUserImageURL,
         createUser,
