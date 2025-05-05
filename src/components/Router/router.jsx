@@ -7,6 +7,7 @@ import Error from '../Error';
 import Registration from '../../Pages/Registration';
 import PrivateRoute from '../AuthProvider/PrivateRoute';
 import BillsPage from '../../Pages/BillsPage';
+import BillDetails from '../../Pages/BillDetails';
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,13 @@ const router = createBrowserRouter([
             },
             { path: '/login', Component: Login },
             { path: '/registration', Component: Registration },
-            // { path: '/bills-details', Component: BillsDetails },
+            {
+                path: '/bills-details/:id',
+                loader: () => fetch('/billDetails.json'),
+                element: <PrivateRoute>
+                    <BillDetails></BillDetails>
+                </PrivateRoute>,
+            },
         ],
     },
     ,

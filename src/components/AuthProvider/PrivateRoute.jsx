@@ -4,11 +4,19 @@ import { Navigate } from 'react-router';
 
 const PrivateRoute = ({ children }) => {
 
-    const { user } = use(AuthContext);
-    console.log(user);
+    const { user, loading } = use(AuthContext);
+    // console.log(user);
+
+    if (loading) {
+        return (
+            <div className="h-screen flex justify-center items-center text-xl font-semibold">
+                Loading...
+            </div>
+        );
+    }
 
 
-    if (user && user?.email) {
+    if (user) {
         return children;
     }
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const BillsPage = () => {
 
     const billData = useLoaderData();
-    console.log(billData)
+    console.log(typeof billData[0].id)
 
 
 
@@ -34,7 +34,7 @@ const BillsPage = () => {
 
 
                         <div className='justify-end'>
-                            <button className=" btn btn-success px-6 text-white font-bold">See Details</button>
+                            <Link to={`/bills-details/${bill.id}`} className=" btn btn-primary px-6 text-white font-bold">See Details</Link>
 
                         </div>
                     </div>

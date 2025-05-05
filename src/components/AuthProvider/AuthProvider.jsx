@@ -13,16 +13,19 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [userImageURL, setUserImageURL] = useState(null);
+    const [loading, setLoading] = useState(true); // initially true
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const userSignIn = (email, password) => {
+        setUser(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const userSignOut = () => {
+        setUser(false);
         return signOut(auth);
     }
 
@@ -33,6 +36,7 @@ const AuthProvider = ({ children }) => {
                 console.log(user);
                 // console.log(user.displayName);
                 setUser(user);
+                setLoading(false);
                 setUserImageURL(userImageURL);
             }
             else {
