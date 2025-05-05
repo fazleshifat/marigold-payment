@@ -4,7 +4,7 @@ import { Link, useLoaderData } from 'react-router';
 const BillsPage = () => {
 
     const billData = useLoaderData();
-    console.log(typeof billData[0].id)
+    // console.log(typeof billData[0].id)
 
 
 

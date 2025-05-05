@@ -5,7 +5,7 @@ const BillDetails = () => {
 
     const billData = useLoaderData();
     const { id } = useParams();
-    console.log(typeof id)
+    // console.log(typeof id)
 
     const bill = billData.find((eachBill) => eachBill.id === parseInt(id));
 

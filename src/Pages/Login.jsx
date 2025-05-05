@@ -12,6 +12,7 @@ const Login = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
+    console.log(location);
 
 
     const handleLogin = (e) => {
@@ -25,10 +26,8 @@ const Login = () => {
         // console.log(email, password);
         userSignIn(email, password)
             .then((result) => {
-                // Signed in 
-                const user = userCredential.user;
-                alert('logged in')
-                navigate('/*');
+                const loggedUser = result.user;
+                navigate(location.state || "/");
 
             })
             .catch((error) => {

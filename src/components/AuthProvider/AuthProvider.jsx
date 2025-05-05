@@ -20,29 +20,28 @@ const AuthProvider = ({ children }) => {
     }
 
     const userSignIn = (email, password) => {
-        setUser(true);
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
     const userSignOut = () => {
-        setUser(false);
+        setLoading(true);
         return signOut(auth);
     }
 
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                console.log(user);
-                // console.log(user.displayName);
                 setUser(user);
-                setLoading(false);
-                setUserImageURL(userImageURL);
+            } else {
+                setUser(null);
             }
-            else {
-                console.log('any user not logged in');
-            }
-        })
+            setLoading(false);
+        });
+
+        
+        return () => unsubscribe();
     }, [])
 
     const authData = {

@@ -21,7 +21,7 @@ const router = createBrowserRouter([
                     <BillsPage></BillsPage>
                 </PrivateRoute>,
                 loader: () => fetch('/billDetails.json'),
-                hydrateFallbackElement: <h1>loading...</h1>
+                hydrateFallbackElement: <span></span>,
             },
             { path: '/login', Component: Login },
             { path: '/registration', Component: Registration },
