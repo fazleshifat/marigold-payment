@@ -28,8 +28,6 @@ const Registration = () => {
 
     return (
         <>
-            <Navbar></Navbar>
-
             <div className='w-full flex h-screen md:h-[calc(100vh-50px)] items-center justify-center'>
                 <div className="card bg-base-100 md:w-full mx-auto md:max-w-sm shrink-0 shadow-2xl">
                     <h1 className='text-2xl md:text-5xl font-bold mx-auto'>Registration</h1>

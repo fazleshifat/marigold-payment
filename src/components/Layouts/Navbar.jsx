@@ -25,7 +25,7 @@ const Navbar = () => {
         <li className='text-lg font-semibold text-sky-500 hover:text-sky-800'><NavLink to='/'>Home</NavLink></li>
         <li className='text-lg font-semibold text-sky-500 hover:text-sky-800'><NavLink to='/offers'>Offers</NavLink></li>
         <li className='text-lg font-semibold text-sky-500 hover:text-sky-800'><NavLink to='/contact'>Contact</NavLink></li>
-        <li className='text-lg font-semibold text-sky-600 hover:text-sky-900'><NavLink to='/bills-page'>Bills Page</NavLink></li>
+        <li className='text-lg font-semibold text-sky-600 hover:text-sky-900'><NavLink to='/bills-page'>Bills Details</NavLink></li>
         <li className='text-lg font-semibold text-sky-600 hover:text-sky-900'><NavLink to='/my-profile'>My Profile</NavLink></li>
 
 
@@ -34,7 +34,7 @@ const Navbar = () => {
     </>
     return (
 
-        <div className="navbar bg-base-100 shadow-sm md:px-8">
+        <div className="navbar bg-base-100 shadow-sm md:px-8 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="lg:hidden">
