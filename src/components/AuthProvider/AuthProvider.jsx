@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [userImageURL, setUserImageURL] = useState(null);
 
-    const createUser = (name, email, password) => {
+    const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // console.log(user);
+                console.log(user);
                 // console.log(user.displayName);
                 setUser(user);
                 setUserImageURL(userImageURL);

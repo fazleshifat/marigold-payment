@@ -39,9 +39,9 @@ const Login = () => {
 
             <Navbar></Navbar>
 
-            <div className='w-full flex h-[calc(100vh-50px)] items-center justify-center'>
-                <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl">
-                    <h1 className='text-5xl font-bold mx-auto'>Login</h1>
+            <div className='w-full flex h-screen md:h-[calc(100vh-50px)] items-center justify-center'>
+                <div className="card bg-base-100 md:w-full mx-auto md:max-w-sm shrink-0 shadow-2xl">
+                    <h1 className='text-2xl md:text-5xl font-bold mx-auto'>Login</h1>
                     <div className="card-body">
                         <form onSubmit={handleLogin} className="fieldset">
                             <label className="label">Email</label>
