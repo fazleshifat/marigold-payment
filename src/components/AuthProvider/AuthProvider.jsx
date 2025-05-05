@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // console.log(user);
-                console.log(user.displayName);
+                // console.log(user.displayName);
                 setUser(user);
                 setUserImageURL(userImageURL);
             }
