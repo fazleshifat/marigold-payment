@@ -5,14 +5,14 @@ const Offers = () => {
         <div className='max-w-11/12 mx-auto  py-16'>
             <h1 className='text-5xl text-center font-bold text-purple-900 py-14'>Our Best Offers</h1>
 
-            <div className='flex justify-around'>
+            <div className='flex justify-around md:flex-row flex-col'>
 
 
-                <div className="card w-96 bg-base-100 shadow-sm">
+                <div className="card md:w-96 w-70 bg-base-100 shadow-sm">
                     <div className="card-body">
-                        <span className="badge badge-xs badge-warning">Most Popular</span>
+
                         <div className="flex justify-between">
-                            <h2 className="text-3xl font-bold">Premium</h2>
+                            <h2 className="text-3xl font-bold">Zero Convenience Fee!</h2>
                             <span className="text-xl">$29/mo</span>
                         </div>
                         <ul className="mt-6 flex flex-col gap-2 text-xs">
@@ -51,11 +51,11 @@ const Offers = () => {
 
 
 
-                <div className="card w-96 bg-base-100 shadow-sm">
+                <div className="card md:w-96 w-70 bg-base-100 shadow-sm">
                     <div className="card-body">
                         <span className="badge badge-xs badge-warning">Most Popular</span>
                         <div className="flex justify-between">
-                            <h2 className="text-3xl font-bold">Premium</h2>
+                            <h2 className="text-3xl font-bold">Cashback on First Payment</h2>
                             <span className="text-xl">$29/mo</span>
                         </div>
                         <ul className="mt-6 flex flex-col gap-2 text-xs">
@@ -94,11 +94,11 @@ const Offers = () => {
 
 
 
-                <div className="card w-96 bg-base-100 shadow-sm">
+                <div className="card md:w-96 w-70 bg-base-100 shadow-sm">
                     <div className="card-body">
-                        <span className="badge badge-xs badge-warning">Most Popular</span>
+
                         <div className="flex justify-between">
-                            <h2 className="text-3xl font-bold">Premium</h2>
+                            <h2 className="text-3xl font-bold">Refer & Earn</h2>
                             <span className="text-xl">$29/mo</span>
                         </div>
                         <ul className="mt-6 flex flex-col gap-2 text-xs">
