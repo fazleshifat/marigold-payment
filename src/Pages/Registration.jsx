@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { use } from 'react';
 import Navbar from '../components/Layouts/Navbar';
 import { Link } from 'react-router';
+import { AuthContext } from '../components/AuthProvider/AuthProvider';
 
 const Registration = () => {
 
+    const { createUser, setUserImageURL } = use(AuthContext);
 
     const handleRegistration = (e) => {
         e.preventDefault();
-        console.log('clicked registration')
+        const form = e.target;
+        const name = form.name.value;
+        const image = form.photo_url.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        setUserImageURL(image)
+
+        createUser(email, password)
+            .then((result) => {
+                alert('logged in');
+            }).catch((error) => {
+                console.log(error.message);
+            });
+
     }
 
     return (
@@ -24,13 +39,13 @@ const Registration = () => {
                             <label className="label">Email</label>
                             <input type="email" name='email' className="input" placeholder="Email" />
                             <label className="label">Photo URL</label>
-                            <input type="text" name='photo' className="input" placeholder="photo_URL" />
+                            <input type="text" name='photo_url' className="input" placeholder="photo_URL" />
                             <label className="label">Password</label>
                             <input type="password" name='password' className="input" placeholder="Password" />
                             <div><a className="link link-hover">Forgot password?</a></div>
                             <button className="btn bg-primary text-white mt-4">Registration</button>
-                            <p className='text-center'>Already have an account? 
-                                 <Link to='/login' className='text-primary underline ml-1'>Login here</Link></p>
+                            <p className='text-center'>Already have an account?
+                                <Link to='/login' className='text-primary underline ml-1'>Login here</Link></p>
                         </form>
                     </div>
                 </div>

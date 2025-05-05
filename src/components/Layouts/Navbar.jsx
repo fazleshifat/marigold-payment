@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 
 const Navbar = () => {
+
+    const { user, setUser, userImageURL, setUserImageURL, userSignOut } = use(AuthContext);
+    // setUser(null);
+
+    const handleSignOut = () => {
+        userSignOut()
+            .then(() => {
+                alert('singed out');
+                setUser(null);
+            }).catch((error) => {
+                // An error happened.
+                console.log(error.code)
+            });
+    }
 
     const links = <>
 
@@ -42,43 +57,60 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2 flex">
-                {/* login */}
-                <Link to='/login' className="relative inline-flex items-center justify-start px-3 md:px-6 py-2 overflow-hidden font-medium transition-all bg-purple-500 rounded hover:bg-white group">
-                    <span className="w-48 h-48 rounded rotate-[-40deg] bg-black absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                    <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-white">Login</span>
-                </Link>
-                {/* register */}
-                <Link to='/registration' className="relative inline-flex items-center justify-start px-3 md:px-6 py-2 overflow-hidden font-medium transition-all bg-pink-700 rounded hover:bg-white group">
-                    <span className="w-48 h-48 rounded rotate-[-40deg] bg-black absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                    <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-white">Register</span>
-                </Link>
+                {user ?
 
-                {/* avatar */}
-                <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-auto rounded-full">
-                            <img
-                                className='w-24'
-                                alt="Tailwind CSS Navbar component"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                        </div>
-                    </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li>
-                            <a className="justify-between">
-                                Profile
+                    // if data is true
 
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+                    (
+                        <>
+                            {/* avatar */}
+                            {user && user.email}
+                            < div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-auto rounded-full">
+                                        <img
+                                            className='w-24'
+                                            alt="Tailwind CSS Navbar component"
+                                            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    </div>
+                                </div>
+                                <ul
+                                    tabIndex={0}
+                                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                    <li><Link>Profile</Link></li>
+                                    <li><Link>Settings</Link></li>
+                                    <li><Link onClick={handleSignOut}>Sign Out</Link></li>
+
+                                </ul>
+                            </div>
+                        </>
+                    )
+
+                    : //if data is false 
+
+                    (
+                        // two buttons here (Login/Registration)
+
+                        <>
+
+                            {/* login */}
+                            < Link to='/login' className="relative inline-flex items-center justify-start px-3 md:px-6 py-2 overflow-hidden font-medium transition-all bg-purple-500 rounded hover:bg-white group">
+                                <span className="w-48 h-48 rounded rotate-[-40deg] bg-black absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                                <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-white">Login</span>
+                            </Link>
+                            {/* register */}
+                            <Link to='/registration' className="relative inline-flex items-center justify-start px-3 md:px-6 py-2 overflow-hidden font-medium transition-all bg-pink-700 rounded hover:bg-white group">
+                                <span className="w-48 h-48 rounded rotate-[-40deg] bg-black absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+                                <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-white">Register</span>
+                            </Link>
+
+                        </>
+
+                    )
+                }
 
             </div>
-        </div>
+        </div >
     );
 };
 
