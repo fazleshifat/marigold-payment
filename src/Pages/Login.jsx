@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import Navbar from '../components/Layouts/Navbar';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
@@ -7,12 +7,16 @@ const Login = () => {
 
     const { userSignIn } = use(AuthContext);
 
+    const [error, setError] = useState('');
+    // setError('');
+
     const location = useLocation();
     const navigate = useNavigate();
 
 
     const handleLogin = (e) => {
         e.preventDefault();
+        setError('');
 
         const form = e.target;
         // const name = form.name.value;
@@ -29,6 +33,7 @@ const Login = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setError(errorCode);
             });
 
     }
@@ -48,6 +53,7 @@ const Login = () => {
                             <input type="email" name='email' className="input" placeholder="Email" />
                             <label className="label">Password</label>
                             <input defaultValue={`890ioP`} type="password" name='password' className="input" placeholder="Password" />
+                            <p className='text-red-500'>{error}</p>
                             <div><Link className="link link-hover">Forgot password?</Link></div>
                             <button className="btn bg-sky-500 text-white mt-4">Login</button>
                             {/* Google */}
