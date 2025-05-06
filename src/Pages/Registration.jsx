@@ -5,15 +5,15 @@ import { useState } from 'react';
 
 const Registration = () => {
 
-    const { createUser, setUserImageURL, loading, setLoading } = use(AuthContext);
+    const { createUser, setUser, setUserImageURL, loading, setLoading } = use(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleRegistration = (e) => {
         e.preventDefault();
         const form = e.target;
-        // const name = form.name.value;
-        // const image = form.photo_url.value;
+        const name = form.name.value;
+        const image = form.photo_url.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -22,7 +22,8 @@ const Registration = () => {
             .then((result) => {
                 navigate('/');
                 // alert('registration complete');
-                console.log(result.user);
+                setUser(result.user);
+
             }).catch((error) => {
                 setError(error.code);
                 setLoading(false);

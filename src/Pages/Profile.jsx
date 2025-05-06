@@ -6,6 +6,7 @@ import { AuthContext } from '../components/AuthProvider/AuthProvider';
 const Profile = () => {
 
     const { user } = use(AuthContext);
+    console.log(user.photoURL)
 
     return (
         <>

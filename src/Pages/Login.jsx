@@ -43,7 +43,8 @@ const Login = () => {
         googleSignIn()
             .then((result) => {
                 console.log('google loggedIn success |', user)
-                setUser(result.user)
+                setUser(result.user);
+                navigate(location?.state || "/");
             })
             .catch((error) => {
                 console.log(error.code)
