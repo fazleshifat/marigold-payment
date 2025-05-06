@@ -3,7 +3,7 @@ import React from 'react';
 const Offers = () => {
     return (
         <div className='max-w-11/12 mx-auto  py-16'>
-            <h1 className='text-5xl text-center font-bold text-purple-900 py-14'>Our Best Offers</h1>
+            <h1 className='text-5xl text-center font-bold text-purple-400 py-14'>Our Best Offers<span className='text-amber-400 font-extrabold'>|</span></h1>
 
             <div className='flex justify-around md:flex-row flex-col'>
 

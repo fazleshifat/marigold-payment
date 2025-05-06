@@ -4,17 +4,17 @@ const Services = () => {
     return (
         <div>
 
-            <h1 className='text-3xl  md:text-5xl font-bold text-center py-16 text-purple-900'>Our Services<span className='text-amber-400 font-extrabold'>|</span> </h1>
+            <h1 className='text-3xl  md:text-5xl font-bold text-center py-16 text-purple-200'>Our Services<span className='text-amber-400 font-extrabold'>|</span> </h1>
 
             {/* first card */}
-            <div className="hero bg-base-200">
+            <div className="hero">
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row">
                     <img
                         className='w-2xl' src='/assets/slide-1.png'
                     />
                     <div>
-                        <h1 className="text-4xl font-bold">🔌Electricity Bill!</h1>
-                        <p className="py-6">
+                        <h1 className="text-4xl font-bold text-purple-300 underline">🔌Electricity Bill</h1>
+                        <p className="py-6 text-gray-300">
                             Stay Flowing, Stay Informed
                             Keep tabs on your household or commercial water consumption and manage bills online with transparency and control. No more hidden fees — just clear, detailed billing at your fingertips.
                             <br />
@@ -36,14 +36,14 @@ const Services = () => {
 
             {/* second card */}
 
-            <div className="hero bg-base-200">
+            <div className="hero">
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row-reverse">
                     <img
                         className='w-96' src='/assets/slide-2.jpg'
                     />
                     <div>
-                        <h1 className="text-4xl font-bold">💧Water Bill!</h1>
-                        <p className="py-6">
+                        <h1 className="text-4xl font-bold text-purple-300 underline">💧Water Bill</h1>
+                        <p className="py-6 text-gray-200">
                             Power Your Life with Ease
                             Easily track, manage, and pay your electricity bills without the long queues or paper hassle. Our system ensures accurate meter-based billing, timely reminders, and a smooth payment experience.
                             <br />
@@ -65,14 +65,14 @@ const Services = () => {
 
             {/* third card */}
 
-            <div className="hero bg-base-200">
+            <div className="hero ">
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row">
                     <img
                         className='w-96' src='/assets/slide-3.png'
                     />
                     <div>
-                        <h1 className="text-4xl font-bold">🔥Gas Bill!</h1>
-                        <p className="py-6">
+                        <h1 className="text-4xl font-bold text-purple-300 underline">🔥Gas Bill</h1>
+                        <p className="py-6 text-gray-200">
                             Fuel Your Home, Not the Hassle
                             Securely view and pay your gas bills with one click. Whether you're using piped or cylinder-based gas, our system accommodates both with flexible billing options and real-time updates.
                             <br />
@@ -94,14 +94,14 @@ const Services = () => {
 
             {/* fourth card */}
 
-            <div className="hero bg-base-200">
+            <div className="hero ">
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row-reverse">
                     <img
                         className='w-auto' src='/assets/slide-4.png'
                     />
                     <div>
-                        <h1 className="text-4xl font-bold">🌐All-in-One Utility!</h1>
-                        <p className="py-6">
+                        <h1 className="text-4xl font-bold text-purple-100 underline">🌐All in One Utility</h1>
+                        <p className="py-6 text-gray-700">
                             Unified Billing for Every Need
                             No more juggling multiple platforms! Marigold brings electricity, water, gas, and more into one easy-to-use dashboard — so you can manage all your utilities from a single place.
                             <br />

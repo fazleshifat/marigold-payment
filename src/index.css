@@ -2,7 +2,21 @@
 @plugin "daisyui";
 
 a.active {
-    color: #6b46c1;
+    color: #22D3EE;
     text-decoration: underline;
 
+}
+
+body {
+    /* 45° angle, smoothly blending four colors */
+    background: linear-gradient(45deg,
+            /* #2D033B 0%, */
+            /* dark purple  */
+            #A21CAF 10%,
+            /* vivid magenta */
+            #22D3EE 60%,
+            /* sky blue     */
+            #1E3A8A 40%
+            /* navy blue    */
+        )
 }

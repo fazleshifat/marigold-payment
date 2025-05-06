@@ -12,11 +12,11 @@ const BillsPage = () => {
     return (
 
         <>
-            <div className="w-11/12 mx-auto my-10 mt-24 grid grid-cols-1 rounded-2xl">
+            <div className="w-11/12 mx-auto py-10 pt-24 grid grid-cols-1 rounded-2xl">
                 {billData.map((bill) => (
                     <div
                         key={bill.id}
-                        className="w-full bg-base-300 shadow-sm grid grid-cols-1 md:grid-cols-12 my-5 p-2 md:px-5 items-center rounded-2xl"
+                        className="w-full border-2 border-cyan-200 bg-[linear-gradient(135deg,_#A21CAF_0%,_#1E3A8A_100%)] text-gray-200 shadow-sm grid grid-cols-1 md:grid-cols-12 my-5 p-2 md:px-5 items-center rounded-2xl"
                     >
                         {/* Image Section with Icon */}
                         <div className="md:col-span-4 p-1 grid place-items-center">
@@ -55,7 +55,7 @@ const BillsPage = () => {
                             <div className="grid items-center md:justify-end md:mt-0 mt-4">
                                 <Link
                                     to={`/bills-details/${bill.id}`}
-                                    className="btn btn-primary px-4 md:px-6 text-white font-bold"
+                                    className="btn bg-purple-500 px-4 md:px-6 text-white font-bold"
                                 >
                                     See Details
                                 </Link>
@@ -66,7 +66,7 @@ const BillsPage = () => {
 
 
             </div>
-            
+
 
             <Footer></Footer>
         </>

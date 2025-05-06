@@ -35,7 +35,7 @@ const Navbar = () => {
             <li className="relative group text-lg font-semibold transition duration-300 ease-in-out">
                 <NavLink
                     to="/"
-                    className="relative inline-block text-sky-800 group-hover:text-purple-600 transition duration-300 ease-in-out"
+                    className="relative inline-block text-[#9b86c1] group-hover:text-purple-600 transition duration-300 ease-in-out"
                 >
                     Home
                     <span
@@ -48,7 +48,7 @@ const Navbar = () => {
             <li className="relative group text-lg font-semibold transition duration-300 ease-in-out">
                 <NavLink
                     to="/bills-page"
-                    className="relative inline-block text-sky-800 group-hover:text-purple-600 transition duration-300 ease-in-out"
+                    className="relative inline-block text-[#9b86c1] group-hover:text-sky-600 transition duration-300 ease-in-out"
                 >
                     Bills
                     <span
@@ -61,7 +61,7 @@ const Navbar = () => {
             <li className="relative group text-lg font-semibold transition duration-300 ease-in-out">
                 <NavLink
                     to="/my-profile"
-                    className="relative inline-block text-sky-800 group-hover:text-purple-600 transition duration-300 ease-in-out"
+                    className="relative inline-block text-[#9b86c1] group-hover:text-purple-600 transition duration-300 ease-in-out"
                 >
                     My Profile
                     <span
@@ -80,7 +80,7 @@ const Navbar = () => {
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-base-100 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
@@ -107,8 +107,13 @@ const Navbar = () => {
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-auto rounded-full">
-                                    <img className='w-24 border-1 border-gray-300 rounded-full' alt="User Avatar"
-                                        src={user.photoURL} />
+                                    {
+                                        user ? <img src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" /> :
+                                            <img className='w-24 border-1 border-gray-300 rounded-full' alt="User Avatar"
+                                                src={user.photoURL} />
+                                    }
+
+
                                 </div>
                             </div>
                             <ul tabIndex={0} className="menu dropdown-content bg-base-100 space-y-4 rounded-box z-10 mt-5 w-fit p-2 shadow">

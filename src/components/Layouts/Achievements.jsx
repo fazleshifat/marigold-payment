@@ -3,7 +3,7 @@ import React from 'react';
 const Achievements = () => {
     return (
         <>
-            <h1 className='text-5xl text-purple-900 text-center font-bold py-10'>Our Achievements<span className='text-amber-400 font-extrabold'>|</span></h1>
+            <h1 className='text-5xl text-purple-300 text-center font-bold py-10'>Our Achievements<span className='text-amber-400 font-extrabold'>|</span></h1>
             <div className='grid md:grid-cols-3 grid-cols-1 max-w-11/12 gap-10 mx-auto py-24'>
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
+import Footer from '../components/Layouts/Footer';
 
 const BillDetails = () => {
 
@@ -13,12 +14,12 @@ const BillDetails = () => {
 
     return (
         <>
-            <div className="w-11/12 mx-auto my-10 grid grid-cols-1 items-center gap-6 mt-26 rounded-2xl">
+            <div className="w-11/12 mx-auto py-10 grid grid-cols-1 items-center gap-6  pt-26 rounded-2xl">
                 <div
                     key={bill.id}
-                    className="w-full mx-auto md:w-7/12 bg-base-300 shadow-sm rounded-2xl grid grid-cols-1 md:grid-cols-12 my-5 p-4 items-center"
+                    className="w-full mx-auto md:w-7/12 shadow-sm border-2 border-cyan-200 bg-[linear-gradient(135deg,_#A21CAF_0%,_#1E3A8A_100%)] text-white rounded-2xl grid grid-cols-1 md:grid-cols-12 py-5 p-4 items-center"
                 >
-                   
+
                     {/* Image Section */}
                     <div className="md:col-span-6 p-3 grid place-items-center">
                         <div className="relative w-8/12 md:w-10/12">
@@ -55,7 +56,7 @@ const BillDetails = () => {
             </div>
 
 
-
+            <Footer></Footer>
         </>
     );
 };
