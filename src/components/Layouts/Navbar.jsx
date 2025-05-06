@@ -108,9 +108,12 @@ const Navbar = () => {
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-auto rounded-full">
                                     {
-                                        user ? <img src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" /> :
-                                            <img className='w-24 border-1 border-gray-300 rounded-full' alt="User Avatar"
-                                                src={user.photoURL} />
+                                        user ? <img className='w-44 border-1 border-gray-300 rounded-full' alt="User Avatar"
+                                            src={user.photoURL} />
+                                            :
+                                            <img className='w-44 border-1 border-gray-300 rounded-full' src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" />
+
+
                                     }
 
 

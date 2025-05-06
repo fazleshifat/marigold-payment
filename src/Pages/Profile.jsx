@@ -16,11 +16,12 @@ const Profile = () => {
                         <figure className="relative px-10 pt-10">
 
                             {
-                                user ?
-                                    <img className='w-44 border-1 border-gray-300 rounded-full' src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" /> :
+                                user ? <img className='w-44 border-1 border-gray-300 rounded-full' alt="User Avatar"
+                                    src={user.photoURL} />
+                                    :
+                                    <img className='w-44 border-1 border-gray-300 rounded-full' src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" />
 
-                                    <img className='w-24 border-1 border-gray-300 rounded-full' alt="User Avatar"
-                                        src={user.photoURL} />
+
                             }
 
                         </figure>
