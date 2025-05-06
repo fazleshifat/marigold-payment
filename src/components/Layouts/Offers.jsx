@@ -2,13 +2,13 @@ import React from 'react';
 
 const Offers = () => {
     return (
-        <div className='max-w-11/12 mx-auto  py-16'>
+        <div className='max-w-11/12 mx-auto py-16'>
             <h1 className='text-5xl text-center font-bold text-purple-400 py-14'>Our Best Offers<span className='text-amber-400 font-extrabold'>|</span></h1>
 
-            <div className='flex justify-around md:flex-row flex-col'>
+            <div className='flex mx-auto justify-around space-y-6 md:flex-row flex-col'>
 
 
-                <div className="card md:w-96 w-70 bg-base-100 shadow-sm">
+                <div className="card md:w-96 mx-auto w-70 bg-base-100 shadow-sm">
                     <div className="card-body">
 
                         <div className="flex justify-between">
@@ -51,7 +51,7 @@ const Offers = () => {
 
 
 
-                <div className="card md:w-96 w-70 bg-base-100 shadow-sm">
+                <div className="card md:w-96 mx-auto w-70 bg-base-100 shadow-sm">
                     <div className="card-body">
                         <span className="badge badge-xs badge-warning">Most Popular</span>
                         <div className="flex justify-between">
@@ -94,7 +94,7 @@ const Offers = () => {
 
 
 
-                <div className="card md:w-96 w-70 bg-base-100 shadow-sm">
+                <div className="card md:w-96 mx-auto w-70 bg-base-100 shadow-sm">
                     <div className="card-body">
 
                         <div className="flex justify-between">

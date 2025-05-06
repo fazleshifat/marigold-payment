@@ -101,7 +101,7 @@ const Services = () => {
                     />
                     <div>
                         <h1 className="text-4xl font-bold text-purple-100 underline">🌐All in One Utility</h1>
-                        <p className="py-6 text-gray-700">
+                        <p className="py-6 text-gray-400 md:text-gray-100">
                             Unified Billing for Every Need
                             No more juggling multiple platforms! Marigold brings electricity, water, gas, and more into one easy-to-use dashboard — so you can manage all your utilities from a single place.
                             <br />

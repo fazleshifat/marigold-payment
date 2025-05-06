@@ -12,8 +12,8 @@ const PrivateRoute = ({ children }) => {
 
     if (loading) {
         return (
-            <div className="h-[calc(100vh-50px)] flex justify-center items-center text-xl font-semibold">
-                <span className="loading loading-infinity text-purple-500 w-14"></span>
+            <div className="h-screen bg-[linear-gradient(135deg,_#A21CAF_0%,_#1E3A8A_100%)]  flex justify-center items-center text-xl font-semibold">
+                <span className="loading loading-infinity text-white w-24"></span>
             </div>
         );
     }

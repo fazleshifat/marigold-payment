@@ -113,7 +113,6 @@ const Navbar = () => {
                                             :
                                             <img className='w-44 border-1 border-gray-300 rounded-full' src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" />
 
-
                                     }
 
 
