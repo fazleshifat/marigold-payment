@@ -13,6 +13,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    const [balance, setBalance] = useState(10000);
     const [userImageURL, setUserImageURL] = useState(null);
     const [loading, setLoading] = useState(true); // initially true
 
@@ -44,7 +45,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                console.log(user.providerData)
+                // console.log(user.providerData)
             } else {
                 setUser(null);
             }
@@ -58,6 +59,8 @@ const AuthProvider = ({ children }) => {
     const authData = {
         user,
         setUser,
+        setBalance,
+        balance,
         loading,
         setLoading,
         userImageURL,

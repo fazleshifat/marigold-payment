@@ -1,16 +1,27 @@
 import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
 import Footer from '../components/Layouts/Footer';
+import { useState } from 'react';
+import { use } from 'react';
+import { AuthContext } from '../components/AuthProvider/AuthProvider';
 
 const BillDetails = () => {
 
-
+    const { balance, setBalance } = use(AuthContext);
 
     const billData = useLoaderData();
     const { id } = useParams();
+    const [bills, setBills] = useState(0);
     // console.log(typeof id)
 
     const bill = billData.find((eachBill) => eachBill.id === parseInt(id));
+
+    const handleBillPay = () => {
+        const remainingBalance = (balance - bill.amount)
+        setBalance(remainingBalance)
+    }
+
+
 
     return (
         <>
@@ -46,6 +57,7 @@ const BillDetails = () => {
                         <h2 className="card-title font-semibold">Due date: {bill.due_date}</h2>
 
                         <Link
+                            onClick={handleBillPay}
                             to={`/bills-details/${bill.id}`}
                             className="btn w-full md:w-42 btn-success px-6 text-white font-bold"
                         >

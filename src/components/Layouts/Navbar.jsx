@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
-    const { user, setUser, userImageURL, setUserImageURL, userSignOut } = useContext(AuthContext);
+    const { user, setUser, balance, setBalance, userImageURL, setUserImageURL, userSignOut } = useContext(AuthContext);
 
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -23,6 +25,10 @@ const Navbar = () => {
         userSignOut()
             .then(() => {
                 setUser(null);
+                navigate('/login')
+                toast((
+                    'Signed out successful! Still you can visit the homepage!'
+                ));
             })
             .catch((error) => {
                 console.log(error.code);
@@ -50,7 +56,13 @@ const Navbar = () => {
                     to="/bills-page"
                     className="relative inline-block text-[#9b86c1] group-hover:text-sky-600 transition duration-300 ease-in-out"
                 >
-                    Bills
+                    <div className="dropdown dropdown-bottom">
+                        <div tabIndex={0} role="button" className="m-1">Bills ⬇️</div>
+                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 2</a></li>
+                        </ul>
+                    </div>
                     <span
                         className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-purple-600 transition-all duration-300 ease-in-out
             group-hover:w-full group-hover:left-0"
@@ -105,8 +117,9 @@ const Navbar = () => {
                     <>
 
                         <div className="dropdown dropdown-end">
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className="w-auto rounded-full">
+                            <div tabIndex={0} role="button" className="relative btn btn-ghost btn-circle avatar">
+                                <div className="absolute w-7 h-7 rounded-full bg-white/70 animate-ping"></div>
+                                <div className="relative w-auto rounded-full">
                                     {
                                         user ? <img className='w-44 border-1 border-gray-300 rounded-full' alt="User Avatar"
                                             src={user.photoURL} />
@@ -118,25 +131,34 @@ const Navbar = () => {
 
                                 </div>
                             </div>
-                            <ul tabIndex={0} className="menu dropdown-content bg-base-100 space-y-4 rounded-box z-10 mt-5 w-fit p-2 shadow">
+                            <ul tabIndex={0} className="menu dropdown-content bg-base-100 space-y-4 rounded-box z-10 mt-5 w-49 p-2 shadow">
                                 <div>
                                     <li>{user.displayName}</li>
                                 </div>
-                                <li><Link className='text-lg border-b'>Balance: <span className='font-bold'>10000 BDT</span> </Link></li>
+                                <div className='flex gap-2 text-xl'>
+                                    <li>Balance:</li>
+                                    <li className='italic text-orange-500'>{balance} BDT</li>
+                                </div>
                                 <li><Link className='btn text-lg' onClick={handleSignOut}>Sign Out</Link></li>
                             </ul>
                         </div>
                     </>
                 ) : (
                     <>
-                        <Link to='/login' className="relative inline-flex items-center justify-start px-3 md:px-6 py-2 overflow-hidden font-medium transition-all bg-purple-500 rounded hover:bg-white group">
-                            <span className="w-48 h-48 rounded rotate-[-40deg] bg-black absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                            <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-white">Login</span>
+                        <Link
+                            to="/login"
+                            className="relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-white rounded-xl bg-gradient-to-r from-purple-600 to-blue-500 shadow-lg transition-all duration-300 group"
+                        >
+                            <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-300 group-hover:opacity-20 rounded-xl"></span>
+                            <span className="relative z-10">Login</span>
                         </Link>
 
-                        <Link to='/registration' className="relative inline-flex items-center justify-start px-3 md:px-6 py-2 overflow-hidden font-medium transition-all bg-pink-700 rounded hover:bg-white group">
-                            <span className="w-48 h-48 rounded rotate-[-40deg] bg-black absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-                            <span className="relative w-full text-left text-white transition-colors duration-300 ease-in-out group-hover:text-white">Register</span>
+                        <Link
+                            to="/registration"
+                            className="relative inline-flex items-center justify-center px-5 py-2 overflow-hidden font-medium text-white rounded-xl bg-gradient-to-r from-pink-500 to-red-400 shadow-lg transition-all duration-300 group"
+                        >
+                            <span className="absolute inset-0 bg-white opacity-10 transition-opacity duration-300 group-hover:opacity-20 rounded-xl"></span>
+                            <span className="relative z-10">Register</span>
                         </Link>
                     </>
                 )}
