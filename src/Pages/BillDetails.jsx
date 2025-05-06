@@ -4,6 +4,7 @@ import Footer from '../components/Layouts/Footer';
 import { useState } from 'react';
 import { use } from 'react';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const BillDetails = () => {
 
@@ -18,7 +19,8 @@ const BillDetails = () => {
 
     const handleBillPay = () => {
         const remainingBalance = (balance - bill.amount)
-        setBalance(remainingBalance)
+        setBalance(remainingBalance);
+        toast('Bill Paid Successfully!')
     }
 
 

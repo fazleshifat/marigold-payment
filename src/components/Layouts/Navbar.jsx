@@ -88,15 +88,15 @@ const Navbar = () => {
     );
 
     return (
-        <div className={`navbar fixed left-1/2 -translate-x-1/2 top-3 w-11/12 bg-black/10 backdrop-blur-md shadow-sm md:px-8 z-50 rounded-full transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className={`navbar fixed left-1/2 -translate-x-1/2 top-3 w-11/12 bg-black/10 backdrop-blur-md shadow-sm px-3 md:px-8 z-50 rounded-full transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-base-100 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-base-100 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+                    <ul tabIndex={0} className="menu menu-md dropdown-content bg-base-100 rounded-box z-10 mt-3 w-28 p-2 shadow">
                         {links}
                     </ul>
                 </div>
@@ -121,8 +121,10 @@ const Navbar = () => {
                                 <div className="absolute w-7 h-7 rounded-full bg-white/70 animate-ping"></div>
                                 <div className="relative w-auto rounded-full">
                                     {
-                                        user ? <img className='w-44 border-1 border-gray-300 rounded-full' alt="User Avatar"
-                                            src={user.photoURL} />
+                                        user?.providerData?.some(p => p.providerId === 'google.com')
+                                            ?
+                                            <img className='w-44 border-1 border-gray-300 rounded-full' alt="User Avatar"
+                                                src={user.photoURL} />
                                             :
                                             <img className='w-44 border-1 border-gray-300 rounded-full' src="https://img.daisyui.com/images/profile/demo/superperson@192.webp" />
 
@@ -131,13 +133,21 @@ const Navbar = () => {
 
                                 </div>
                             </div>
-                            <ul tabIndex={0} className="menu dropdown-content bg-base-100 space-y-4 rounded-box z-10 mt-5 w-49 p-2 shadow">
+                            <ul tabIndex={0} className="menu dropdown-content bg-base-100 space-y-4 rounded-box z-10 mt-5 w-70 p-2 shadow">
                                 <div>
-                                    <li>{user.displayName}</li>
+                                    {
+
+                                        user?.providerData?.some(p => p.providerId === 'google.com') ?
+                                            <li className='text-xl font-semibold'>
+                                            {user.email}</li> :
+                                            <li className='text-xl font-semibold'>
+                                            Mara Mari</li>
+                                    }
+                                    <li className='text-xl text-gray-500'>{user.email || 'mara@mari.com'}</li>
                                 </div>
-                                <div className='flex gap-2 text-xl'>
+                                <div className='flex gap-2 text-xl border-b-2'>
                                     <li>Balance:</li>
-                                    <li className='italic text-orange-500'>{balance} BDT</li>
+                                    <li className='italic text-yellow-500 font-bold'>{balance} BDT</li>
                                 </div>
                                 <li><Link className='btn text-lg' onClick={handleSignOut}>Sign Out</Link></li>
                             </ul>

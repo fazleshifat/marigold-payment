@@ -10,13 +10,13 @@ a.active {
 body {
     /* 45° angle, smoothly blending four colors */
     background: linear-gradient(45deg,
-            /* #2D033B 0%, */
+            #2D033B 10%,
             /* dark purple  */
-            #A21CAF 10%,
+            #A21CAF 30%,
             /* vivid magenta */
-            #22D3EE 60%,
+            #22D3EE 40%,
             /* sky blue     */
-            #1E3A8A 40%
+            #1E3A8A 90%
             /* navy blue    */
         )
 }

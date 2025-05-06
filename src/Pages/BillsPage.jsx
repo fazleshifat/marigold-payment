@@ -12,7 +12,7 @@ const BillsPage = () => {
     return (
 
         <>
-            <div className="w-11/12 mx-auto py-10 pt-24 grid grid-cols-1 rounded-2xl">
+            <div className="w-11/12  mx-auto py-10 pt-24 grid grid-cols-1 rounded-2xl">
                 {billData.map((bill) => (
                     <div
                         key={bill.id}
