@@ -107,13 +107,14 @@ const Navbar = () => {
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-auto rounded-full">
-                                    <img className='w-24 border-1 border-gray-300 rounded-full' alt="User Avatar" src="/assets/profile.png" />
+                                    <img className='w-24 border-1 border-gray-300 rounded-full' alt="User Avatar"
+                                        src={user.photoURL} />
                                 </div>
                             </div>
                             <ul tabIndex={0} className="menu dropdown-content bg-base-100 space-y-4 rounded-box z-10 mt-5 w-fit p-2 shadow">
-                                <li className='border-b my-4 bg-base-300 p-2'>
-                                    Name:Shifat
-                                    Email:{user.email}</li>
+                                <div>
+                                    <li>{user.displayName}</li>
+                                </div>
                                 <li><Link className='text-lg border-b'>Balance: <span className='font-bold'>10000 BDT</span> </Link></li>
                                 <li><Link className='btn text-lg' onClick={handleSignOut}>Sign Out</Link></li>
                             </ul>

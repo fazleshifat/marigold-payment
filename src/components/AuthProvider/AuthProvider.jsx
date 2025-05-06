@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, deleteUser, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, deleteUser, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { getAuth } from "firebase/auth";
 import { app } from '../../Firebase/firebase.config';
@@ -6,6 +6,7 @@ import { app } from '../../Firebase/firebase.config';
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
 
 export const AuthContext = createContext();
 
@@ -15,6 +16,8 @@ const AuthProvider = ({ children }) => {
     const [userImageURL, setUserImageURL] = useState(null);
     const [loading, setLoading] = useState(true); // initially true
 
+
+    // account with Email 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
@@ -29,11 +32,19 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
+    // Account with Google
+
+    const googleSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    }
+
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                console.log(user)
             } else {
                 setUser(null);
             }
@@ -53,6 +64,7 @@ const AuthProvider = ({ children }) => {
         setUserImageURL,
         createUser,
         userSignIn,
+        googleSignIn,
         userSignOut
     }
 
