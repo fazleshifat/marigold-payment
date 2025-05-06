@@ -17,14 +17,12 @@ const Profile = () => {
                             src={user.photoURL}
                             alt="Shoes"
                             className="rounded-full w-46 md:w-70 border-4 border-gray-300 p-1" />
-                        <img src="/assets/edit.png" className='cursor-pointer absolute w-16 right-19 bottom-2' alt="icon" />
+                        <img src="/assets/edit.png" className='cursor-pointer absolute w-10 md:w-12 right-22 bottom-2' alt="icon" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title text-3xl">{user.displayName}</h2>
-                        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                        <div className="card-actions">
-                            <button className="btn btn-primary">Buy Now</button>
-                        </div>
+                        <h2 className="card-title text-xl text-gray-500">{user.email}</h2>
+
                     </div>
                 </div>
             </div>
