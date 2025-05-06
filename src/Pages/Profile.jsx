@@ -10,9 +10,10 @@ const Profile = () => {
 
     return (
         <>
-            <div className="pt-30 pb-10 md:pt-40 md:pb-30 bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 min-h-screen flex items-center justify-center px-4">
+            <div className=" pt-30 pb-10 md:pt-40 md:pb-30 bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 min-h-screen flex items-center justify-center px-4">
                 {/* User Card / Dashboard */}
-                <div className="w-full max-w-md bg-gradient-to-br from-purple-500 to-indigo-500 bg-opacity-80 rounded-3xl shadow-xl overflow-hidden">
+                <div class="w-full max-w-md bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden">
+                    
 
                     <h1 className=" text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-00 to-purple-50 mx-auto pt-6 text-center">
                         Profile
