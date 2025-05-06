@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
             setLoading(false);
         });
 
-        
+
         return () => unsubscribe();
     }, [])
 
@@ -48,6 +48,7 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         loading,
+        setLoading,
         userImageURL,
         setUserImageURL,
         createUser,

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
+import Footer from '../components/Layouts/Footer';
 
 const BillsPage = () => {
 
@@ -10,42 +11,66 @@ const BillsPage = () => {
 
     return (
 
-        <div className="w-11/12 mx-auto my-10 flex flex-col items-center rounded-2xl">
-
-            {billData.map((bill) =>
-
-                <div key={bill.id} className='w-full bg-base-300 shadow-sm flex flex-col md:flex-row my-5 p-2 md:p-4 items-center rounded-2xl'>
-
-                    <div className='w-full md:w-4/12 rounded-2xl p-3 flex justify-center'>
-                        <img
-                            className='w-8/12 md:w-7/12 md:h-58 border-2 border-gray-300 p-1 md:p-3 rounded-2xl'
-                            src={bill.companyName}
-                            alt="company"
-                        />
-                    </div>
-
-                    <div className="w-full md:flex md:flex-row flex-col md:justify-around md:items-center space-y-3 md:space-y-0 mt-4 md:mt-0">
-
-                        <div className='flex flex-wrap justify-center md:justify-start gap-2 md:gap-8 text-center md:text-left'>
-                            <h2 className="card-title text-sm md:text-xl font-bold">{bill.organization}</h2>
-                            <span className='hidden md:inline'>|</span>
-                            <h2 className="card-title text-sm md:text-xl italic text-gray-400 capitalize">{bill.bill_type}</h2>
-                            <span className='hidden md:inline'>|</span>
-                            <h2 className="card-title text-sm md:text-xl">Amount <span className='font-bold'>{bill.amount} BDT</span></h2>
-                            <span className='hidden md:inline'>|</span>
-                            <h2 className="card-title text-sm md:text-xl font-semibold">Due date: {bill.due_date}</h2>
+        <>
+            <div className="w-11/12 mx-auto my-10 mt-24 grid grid-cols-1 rounded-2xl">
+                {billData.map((bill) => (
+                    <div
+                        key={bill.id}
+                        className="w-full bg-base-300 shadow-sm grid grid-cols-1 md:grid-cols-12 my-5 p-2 md:px-5 items-center rounded-2xl"
+                    >
+                        {/* Image Section with Icon */}
+                        <div className="md:col-span-4 p-1 grid place-items-center">
+                            <div className="relative w-8/12 md:w-7/12">
+                                <img
+                                    className="w-full h-46 border-2 border-gray-300 p-1 md:p-3 rounded-2xl"
+                                    src={bill.companyName}
+                                    alt="company"
+                                />
+                                <div className="absolute bottom-0 right-0 bg-gray-300 p-2 md:p-3 rounded-br-2xl">
+                                    <img src={bill.icon} className="w-6 md:w-12" alt="icon" />
+                                </div>
+                            </div>
                         </div>
 
-                        <div className='flex justify-center md:justify-end mt-4 md:mt-0'>
-                            <Link to={`/bills-details/${bill.id}`} className="btn btn-primary px-4 md:px-6 text-white font-bold">
-                                See Details
-                            </Link>
-                        </div>
+                        {/* Text + Button Section */}
+                        <div className="md:col-span-8 md:flex items-center justify-between grid-cols-1 gap-3 mt-4 md:mt-0">
+                            {/* Bill Info Row */}
+                            <div className="flex flex-wrap grid-flow-col auto-cols-max justify-center md:justify-start gap-1 md:gap-4 text-center md:text-left items-center">
+                                <h2 className="card-title text-sm md:text-xl font-bold">{bill.organization}</h2>
+                                <span>|</span>
+                                <h2 className="card-title text-sm md:text-xl italic text-gray-400 capitalize">
+                                    {bill.bill_type}
+                                </h2>
+                                <span>|</span>
+                                <h2 className="card-title text-sm md:text-xl">
+                                    Amount <span className="font-bold">{bill.amount} BDT</span>
+                                </h2>
+                                <span>|</span>
+                                <h2 className="card-title text-sm md:text-xl font-semibold">
+                                    Due date: {bill.due_date}
+                                </h2>
+                            </div>
 
+                            {/* Button */}
+                            <div className="grid items-center md:justify-end md:mt-0 mt-4">
+                                <Link
+                                    to={`/bills-details/${bill.id}`}
+                                    className="btn btn-primary px-4 md:px-6 text-white font-bold"
+                                >
+                                    See Details
+                                </Link>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            )}
-        </div>
+                ))}
+
+
+            </div>
+            
+
+            <Footer></Footer>
+        </>
+
     );
 };
 

@@ -2,7 +2,7 @@
     {
         "id": 1,
         "bill_type": "electricity",
-        "icon": "https://icon-to-indicate-electricity-bill",
+        "icon": "https://i.ibb.co/C37P3Wx9/electricity.png",
         "organization": "DESCO",
         "amount": 1890,
         "due_date": "2025-03-22",
@@ -11,7 +11,7 @@
     {
         "id": 2,
         "bill_type": "water",
-        "icon": "https://icon-library.com/icons/water-bill-icon.svg",
+        "icon": "https://i.ibb.co/HT4wdwgL/water.png",
         "organization": "WASA",
         "amount": 760,
         "due_date": "2025-04-05",
@@ -20,7 +20,7 @@
     {
         "id": 3,
         "bill_type": "electricity",
-        "icon": "https://icon-to-indicate-electricity-bill",
+        "icon": "https://i.ibb.co/C37P3Wx9/electricity.png",
         "organization": "NESCO",
         "amount": 1220,
         "due_date": "2025-04-18",
@@ -38,7 +38,7 @@
     {
         "id": 5,
         "bill_type": "electricity",
-        "icon": "https://cdn-icons-png.flaticon.com/512/1046/1046876.png",
+        "icon": "https://i.ibb.co/C37P3Wx9/electricity.png",
         "organization": "Palli Bidyut",
         "amount": 2050,
         "due_date": "2025-04-10",

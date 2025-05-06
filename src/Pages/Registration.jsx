@@ -1,11 +1,13 @@
 import React, { use } from 'react';
-import Navbar from '../components/Layouts/Navbar';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
+import { useState } from 'react';
 
 const Registration = () => {
 
-    const { createUser, setUserImageURL } = use(AuthContext);
+    const { createUser, setUserImageURL, loading, setLoading } = use(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleRegistration = (e) => {
         e.preventDefault();
@@ -18,17 +20,19 @@ const Registration = () => {
 
         createUser(email, password)
             .then((result) => {
-                alert('registration complete');
+                navigate('/');
+                // alert('registration complete');
                 console.log(result.user);
             }).catch((error) => {
-                console.log(error.message);
+                setError(error.code);
+                setLoading(false);
             });
 
     }
 
     return (
         <>
-            <div className='w-full flex h-screen md:h-[calc(100vh-50px)] items-center justify-center'>
+            <div className='w-full mt-27 flex h-screen md:h-[calc(100vh-50px)] items-center justify-center'>
                 <div className="card bg-base-100 md:w-full mx-auto md:max-w-sm shrink-0 shadow-2xl">
                     <h1 className='text-2xl md:text-5xl font-bold mx-auto'>Registration</h1>
                     <div className="card-body">
@@ -41,6 +45,8 @@ const Registration = () => {
                             <input type="text" name='photo_url' className="input" placeholder="photo_URL" />
                             <label className="label">Password</label>
                             <input type="password" name='password' className="input" placeholder="Password" />
+                            <div><p className="text-red-500 font-semibold">{error}</p></div>
+
                             <div><a className="link link-hover">Forgot password?</a></div>
                             <button className="btn bg-primary text-white mt-4">Registration</button>
                             <p className='text-center'>Already have an account?
