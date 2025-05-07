@@ -3,29 +3,28 @@ import Marquee from 'react-fast-marquee';
 
 const MarqueeSection = () => {
     return (
-        <div className='max-w-10/12 py-14 space-y-22 mx-auto'>
-            <Marquee pauseOnHover={true} speed={60}>
-                <div className='flex gap-36'>
-                    <img src="/assets/bkash.jpg" className='w-3/12 h-50 mx-6' alt="image" />
-                    <img src="/assets/rocket.png" className='w-3/12 h-50' alt="image" />
-                    <img src="/assets/nagad.jpg" className='w-3/12 h-50' alt="image" />
-                    <img src="/assets/sure cash.png" className='w-3/12 h-50' alt="image" />
-                    <img src="/assets/upay.jpg" className='w-3/12 h-50 mr-14' alt="image" />
+        <div className="max-w-screen-xl py-14 mx-auto space-y-10 px-4">
+            {/* Left to right */}
+            <Marquee pauseOnHover={true} speed={50}>
+                <div className="flex gap-20 items-center">
+                    <img src="/assets/bkash.jpg" className="ml-13 w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="bkash" />
+                    <img src="/assets/rocket.png" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="rocket" />
+                    <img src="/assets/nagad.jpg" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="nagad" />
+                    <img src="/assets/sure cash.png" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="sure cash" />
+                    <img src="/assets/upay.jpg" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="upay" />
                 </div>
             </Marquee>
 
-            
-            <Marquee pauseOnHover={true} speed={60} direction='right'>
-                <div className='flex gap-36'>
-                    <img src="/assets/bkash.jpg" className='w-3/12 h-50 mx-6' alt="image" />
-                    <img src="/assets/rocket.png" className='w-3/12 h-50' alt="image" />
-                    <img src="/assets/nagad.jpg" className='w-3/12 h-50' alt="image" />
-                    <img src="/assets/sure cash.png" className='w-3/12 h-50' alt="image" />
-                    <img src="/assets/upay.jpg" className='w-3/12 h-50 mr-14' alt="image" />
+            {/* Right to left + different speed */}
+            <Marquee pauseOnHover={true} speed={30} direction="right">
+                <div className="flex gap-20 items-center">
+                    <img src="/assets/upay.jpg" className="ml-13 w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="upay" />
+                    <img src="/assets/sure cash.png" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="sure cash" />
+                    <img src="/assets/nagad.jpg" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="nagad" />
+                    <img src="/assets/rocket.png" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="rocket" />
+                    <img src="/assets/bkash.jpg" className="w-28 sm:w-36 md:w-40 lg:w-48 h-auto" alt="bkash" />
                 </div>
             </Marquee>
-
-
         </div>
     );
 };

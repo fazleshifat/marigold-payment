@@ -26,7 +26,7 @@ const BillsPage = () => {
                 {filteredBills.map((bill) => (
                     <div
                         key={bill.id}
-                        className="w-full border-2 border-cyan-200 bg-[linear-gradient(135deg,_#A21CAF_0%,_#1E3A8A_100%)] text-gray-200 shadow-sm grid grid-cols-1 md:grid-cols-12 my-5 p-2 md:px-5 items-center rounded-2xl"
+                        className="w-full border-2 border-cyan-200 bg-[linear-gradient(135deg,_#1E3A8A_40%,_#A21CAF_90%)] text-gray-200 shadow-sm grid grid-cols-1 md:grid-cols-12 my-5 p-2 md:px-5 items-center rounded-2xl"
                     >
                         {/* Image Section with Icon */}
                         <div className="md:col-span-4 p-1 grid place-items-center">

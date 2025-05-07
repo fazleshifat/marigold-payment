@@ -82,7 +82,7 @@ const Banner = () => {
                 <SwiperSlide>
                     <img
                         className="w-6/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/upay-preview.png"
+                        src="/assets/wasa-preview.png"
                         alt="upay"
                     />
                 </SwiperSlide>
@@ -97,16 +97,8 @@ const Banner = () => {
                 <SwiperSlide>
                     <img
                         className="w-8/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/nagad-preview.png"
+                        src="/assets/rocket-preview.png"
                         alt="nagad"
-                    />
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <img
-                        className="w-8/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/bkash-preview.png"
-                        alt="bkash"
                     />
                 </SwiperSlide>
 
@@ -114,16 +106,25 @@ const Banner = () => {
                     <img
                         className="w-6/12 mx-auto mt-20 animate-pulse"
                         src="/assets/upay-preview.png"
+                        alt="bkash"
+                    />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img
+                        className="w-6/12 mx-auto mt-20 animate-pulse"
+                        src="/assets/bakhrabad-preview.png"
                         alt="upay"
                     />
                 </SwiperSlide>
 
                 <SwiperSlide>
                     <img
-                        className="w-8/12 mx-auto mt-1 animate-pulse"
-                        src="/assets/sure-preview.png"
+                        className="w-6/12 mx-auto mt-1 animate-pulse"
+                        src="/assets/water.png"
                         alt="sure"
                     />
+                    <h1 className='text-center md:text-4xl uppercase text-indigo-300 font-bold italic'>Dhaka Wasa</h1>
                 </SwiperSlide>
             </Swiper>
 

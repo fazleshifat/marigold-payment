@@ -5,134 +5,83 @@ const Offers = () => {
         <div className='max-w-11/12 mx-auto py-16'>
             <h1 className='text-5xl text-center font-bold text-purple-400 py-14'>Our Best Offers<span className='text-amber-400 font-extrabold'>|</span></h1>
 
-            <div className='flex mx-auto justify-around space-y-6 md:flex-row flex-col'>
-
-
-                <div className="card md:w-96 mx-auto w-70 bg-base-100 shadow-sm">
+            <div className="flex flex-col md:flex-row justify-center gap-6 py-14 px-4 max-w-screen-xl mx-auto">
+                {/* Basic Plan */}
+                <div className="card w-full md:w-96 bg-pink-100/70 shadow-md border">
                     <div className="card-body">
-
-                        <div className="flex justify-between">
-                            <h2 className="text-3xl font-bold">Zero Convenience Fee!</h2>
-                            <span className="text-xl">$29/mo</span>
-                        </div>
-                        <ul className="mt-6 flex flex-col gap-2 text-xs">
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>High-resolution image generation</span>
+                        <h2 className="text-2xl font-bold">Starter Wallet</h2>
+                        <p className="text-sm text-gray-500 mb-4">For personal use and small transfers</p>
+                        <span className="text-xl font-semibold">$0/month</span>
+                        <ul className="mt-6 space-y-2 text-sm">
+                            <li className="flex items-center">
+                                ✅ Free wallet-to-wallet transfers
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>Customizable style templates</span>
+                            <li className="flex items-center">
+                                ✅ Add up to 2 payment methods
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>Batch processing capabilities</span>
+                            <li className="flex items-center">
+                                ✅ Transaction history access
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>AI-driven image enhancements</span>
-                            </li>
-                            <li className="opacity-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span className="line-through">Seamless cloud integration</span>
-                            </li>
-                            <li className="opacity-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span className="line-through">Real-time collaboration tools</span>
-                            </li>
+                           
                         </ul>
-                        <div className="mt-6">
-                            <button className="btn btn-primary btn-block">Subscribe</button>
-                        </div>
+                        <button className="btn bg-sky-500 text-white btn-block mt-6">Get Started</button>
                     </div>
                 </div>
 
-
-
-
-
-                <div className="card md:w-96 mx-auto w-70 bg-base-100 shadow-sm">
-                    <div className="card-body">
-                        <span className="badge badge-xs badge-warning">Most Popular</span>
-                        <div className="flex justify-between">
-                            <h2 className="text-3xl font-bold">Cashback on First Payment</h2>
-                            <span className="text-xl">$29/mo</span>
-                        </div>
-                        <ul className="mt-6 flex flex-col gap-2 text-xs">
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>High-resolution image generation</span>
+                {/* Popular Plan */}
+                <div className="card w-full md:w-96 bg-base-100 shadow-md border border-primary">
+                    <div className="card-body relative">
+                        <div className="absolute top-0 right-0 m-2 badge badge-warning">Most Popular</div>
+                        <h2 className="text-2xl font-bold">Pro Wallet</h2>
+                        <p className="text-sm text-gray-500 mb-4">For freelancers and power users</p>
+                        <span className="text-xl font-semibold">$5/month</span>
+                        <ul className="mt-6 space-y-2 text-sm">
+                            <li className="flex items-center">
+                                ✅ Unlimited transfers
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>Customizable style templates</span>
+                            <li className="flex items-center">
+                                ✅ Link up to 5 payment methods
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>Batch processing capabilities</span>
+                            <li className="flex items-center">
+                                ✅ Early access to new features
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>AI-driven image enhancements</span>
+                            <li className="flex items-center">
+                                ✅ Priority customer support
                             </li>
-                            <li className="opacity-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span className="line-through">Seamless cloud integration</span>
-                            </li>
-                            <li className="opacity-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span className="line-through">Real-time collaboration tools</span>
-                            </li>
+                            
                         </ul>
-                        <div className="mt-6">
-                            <button className="btn btn-primary btn-block">Subscribe</button>
-                        </div>
+                        <button className="btn btn-success text-white    btn-block mt-6">Subscribe</button>
                     </div>
                 </div>
 
-
-
-
-
-                <div className="card md:w-96 mx-auto w-70 bg-base-100 shadow-sm">
+                {/* Business Plan */}
+                <div className="card w-full md:w-96 bg-purple-100/50 shadow-md border">
                     <div className="card-body">
-
-                        <div className="flex justify-between">
-                            <h2 className="text-3xl font-bold">Refer & Earn</h2>
-                            <span className="text-xl">$29/mo</span>
-                        </div>
-                        <ul className="mt-6 flex flex-col gap-2 text-xs">
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>High-resolution image generation</span>
+                        <h2 className="text-2xl font-bold">Business Suite</h2>
+                        <p className="text-sm text-gray-500 mb-4">For startups and merchants</p>
+                        <span className="text-xl font-semibold">$15/month</span>
+                        <ul className="mt-6 space-y-2 text-sm">
+                            <li className="flex items-center">
+                                ✅ Multi-user access
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>Customizable style templates</span>
+                            <li className="flex items-center">
+                                ✅ Business analytics dashboard
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>Batch processing capabilities</span>
+                            <li className="flex items-center">
+                                ✅ API payment integration
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span>AI-driven image enhancements</span>
+                            <li className="flex items-center">
+                                ✅ Dedicated support manager
                             </li>
-                            <li className="opacity-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span className="line-through">Seamless cloud integration</span>
-                            </li>
-                            <li className="opacity-50">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                <span className="line-through">Real-time collaboration tools</span>
+                            <li className="flex items-center">
+                                ✅ Instant bank withdrawals
                             </li>
                         </ul>
-                        <div className="mt-6">
-                            <button className="btn btn-primary btn-block">Subscribe</button>
-                        </div>
+                        <button className="btn bg-sky-500 text-white btn-block mt-6">Upgrade Now</button>
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

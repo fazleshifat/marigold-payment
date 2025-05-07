@@ -60,7 +60,7 @@ const Navbar = () => {
                         to="/bills-page"
                         className="m-1 cursor-pointer text-[#9b86c1] group-hover:text-sky-600 transition duration-300 ease-in-out"
                     >
-                        Bills Category
+                        Bills Category 🡇
                     </Link>
                     <ul
                         tabIndex={0}

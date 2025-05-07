@@ -20,3 +20,7 @@ body {
             /* navy blue    */
         )
 }
+
+.clip-diagonal {
+    clip-path: ellipse(140px 140px at 10% 20%);
+}

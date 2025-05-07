@@ -136,7 +136,7 @@ const BillDetails = () => {
                                     onClick={handleDuplicateBillPay}
                                     className="btn w-full md:w-42 bg-warning text-black font-bold"
                                 >
-                                    Paid ✅!
+                                    Paid...✅!
                                 </button>
                             )
                         }
