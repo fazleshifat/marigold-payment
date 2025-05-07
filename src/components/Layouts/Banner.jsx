@@ -17,7 +17,7 @@ import 'swiper/css/a11y';
 const Banner = () => {
     return (
 
-        <div className='flex justify-center md:flex-row flex-col items-center md:max-w-11/12 mx-auto md:mt-0 pt-26 py-12 gap-5'>
+        <div className=' flex justify-center md:flex-row flex-col items-center py-30 md:max-w-11/12 mx-auto gap-5'>
 
             <div className='md:w-6/12 w-10/12'>
                 <h1 className="text-3xl md:text-6xl font-bold text-purple-400">Pay your <span className='text-yellow-500'>Utilities!</span> <br />
@@ -56,75 +56,93 @@ const Banner = () => {
 
 
             <Swiper
-                className="w-11/12 md:w-6/12 md:h-[400px] flex items-center"
+                className="w-11/12 md:w-6/12 h-50 md:h-96 "
                 modules={[Navigation, Pagination, A11y]}
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
             >
-                <SwiperSlide>
-                    <img
-                        className="w-8/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/nagad-preview.png"
-                        alt="nagad"
-                    />
+                <SwiperSlide className="flex items-center justify-center">
+
+                    <div className="h-45 md:h-96 flex items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/nagad-preview.png"
+                            alt="nagad"
+                        />
+                    </div>
+
+                </SwiperSlide>
+
+                <SwiperSlide className=" flex items-center justify-center">
+                    <div className="h-45 md:h-96 flex items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/bkash-preview.png"
+                            alt="nagad"
+                        />
+                    </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img
-                        className="w-8/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/bkash-preview.png"
-                        alt="bkash"
-                    />
+                    <div className="h-45 md:h-96 flex items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/wasa-preview.png"
+                            alt="nagad"
+                        />
+                    </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img
-                        className="w-6/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/wasa-preview.png"
-                        alt="upay"
-                    />
+                    <div className="h-45 md:h-96 flex items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/sure-preview.png"
+                            alt="nagad"
+                        />
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="h-45 md:h-96 flex items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/rocket-preview.png"
+                            alt="nagad"
+                        />
+                    </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img
-                        className="w-8/12 mx-auto mt-1 animate-pulse"
-                        src="/assets/sure-preview.png"
-                        alt="sure"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className="w-8/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/rocket-preview.png"
-                        alt="nagad"
-                    />
+                    <div className="h-45 md:h-96 flex items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/upay-preview.png"
+                            alt="nagad"
+                        />
+                    </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img
-                        className="w-6/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/upay-preview.png"
-                        alt="bkash"
-                    />
+                    <div className="h-45 md:h-96 flex items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/bakhrabad-preview.png"
+                            alt="nagad"
+                        />
+                    </div>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img
-                        className="w-6/12 mx-auto mt-20 animate-pulse"
-                        src="/assets/bakhrabad-preview.png"
-                        alt="upay"
-                    />
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <img
-                        className="w-6/12 mx-auto mt-1 animate-pulse"
-                        src="/assets/water.png"
-                        alt="sure"
-                    />
-                    <h1 className='text-center md:text-4xl uppercase text-indigo-300 font-bold italic'>Dhaka Wasa</h1>
+                    <div className="h-45 md:h-96 flex flex-col space-y-2 items-center justify-center w-full">
+                        <img
+                            className="w-20 md:w-60 animate-pulse"
+                            src="/assets/water.png"
+                            alt="nagad"
+                        />
+                        <h1 className='text-center md:text-4xl uppercase text-indigo-300 font-bold italic'>Dhaka Wasa</h1>
+                    </div>
                 </SwiperSlide>
             </Swiper>
 
