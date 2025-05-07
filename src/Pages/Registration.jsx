@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useEffect } from 'react';
 
 const Registration = () => {
 
     const { createUser, user, setUser, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL, googleSignIn, loading, setLoading } = use(AuthContext);
     const [error, setError] = useState('');
+    const [passError, setPassError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -19,8 +21,14 @@ const Registration = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+
         setDefaultUserName(name);
         setUserImageURL(image);
+
+
+
+
+
         console.log(1, defaultUserName, 2, userImageURL)
 
 
@@ -34,7 +42,26 @@ const Registration = () => {
             }).catch((error) => {
                 setError(error.code);
                 setLoading(false);
+                return;
             });
+
+        if (password.length === 0 || email.length === 0) {
+            setPassError("field shouldn't be empty.");
+            return;
+        }
+        if (password.length < 6) {
+            setPassError("Password must be at least 6 characters long.");
+            return;
+        }
+        if (!/[A-Z]/.test(password)) {
+            setPassError("Password must contain at least one uppercase letter.");
+            return;
+        }
+        if (!/[a-z]/.test(password)) {
+            setPassError("Password must contain at least one lowercase letter.");
+            return;
+        }
+
 
     }
 
@@ -70,6 +97,7 @@ const Registration = () => {
                             <div>
                                 <label className="label text-purple-700">Email</label>
                                 <input type="email" name="email" className="input w-full bg-white/70 focus:bg-white border-purple-300" placeholder="Email" />
+
                             </div>
 
                             {/* Photo URL */}
@@ -82,6 +110,7 @@ const Registration = () => {
                             <div>
                                 <label className="label text-purple-700">Password</label>
                                 <input type="password" name="password" className="input w-full bg-white/70 focus:bg-white border-purple-300" placeholder="Password" />
+                                <p className='text-red-500'>{passError}</p>
                             </div>
 
                             {/* Error Message spans both columns */}

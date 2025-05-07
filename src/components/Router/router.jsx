@@ -9,6 +9,7 @@ import PrivateRoute from '../AuthProvider/PrivateRoute';
 import BillsPage from '../../Pages/BillsPage';
 import BillDetails from '../../Pages/BillDetails';
 import Profile from '../../Pages/Profile';
+import ForgetPassword from '../../Pages/ForgetPassword';
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
             },
             { path: '/login', Component: Login },
             { path: '/registration', Component: Registration },
+            { path: '/reset-password', Component: ForgetPassword }
         ],
     },
     ,

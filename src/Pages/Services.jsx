@@ -10,7 +10,7 @@ const Services = () => {
             <div className="hero">
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row">
                     <img
-                        className='w-2xl' src='/assets/slide-1.png'
+                        className='w-11/12 md:w-7/12' src='/assets/slide1.png'
                     />
                     <div>
                         <h1 className="text-4xl font-bold text-purple-300 underline">🔌Electricity Bill</h1>
@@ -39,8 +39,7 @@ const Services = () => {
             <div className="hero">
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row-reverse">
                     <img
-                        className='w-96' src='/assets/slide-2.jpg'
-                    />
+                        className='w-11/12 md:w-7/12' src='/assets/slide2.png'></img>
                     <div>
                         <h1 className="text-4xl font-bold text-purple-300 underline">💧Water Bill</h1>
                         <p className="py-6 text-gray-200">
@@ -60,15 +59,15 @@ const Services = () => {
                             <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">See Details</span>
                         </a>
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
 
             {/* third card */}
 
-            <div className="hero ">
+            < div className="hero " >
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row">
                     <img
-                        className='w-96' src='/assets/slide-3.png'
+                        className='w-11/12 md:w-7/12' src='/assets/slide3.png'
                     />
                     <div>
                         <h1 className="text-4xl font-bold text-purple-300 underline">🔥Gas Bill</h1>
@@ -90,14 +89,14 @@ const Services = () => {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* fourth card */}
 
-            <div className="hero ">
+            < div className="hero " >
                 <div className="border-b-2 mb-4 hero-content flex-col lg:flex-row-reverse">
                     <img
-                        className='w-auto' src='/assets/slide-4.png'
+                        className='w-11/12 md:w-7/12' src='/assets/slider4-preview.png'
                     />
                     <div>
                         <h1 className="text-4xl font-bold text-purple-100 underline">🌐All in One Utility</h1>
@@ -119,9 +118,9 @@ const Services = () => {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div >
 
-        </div>
+        </div >
     );
 };
 

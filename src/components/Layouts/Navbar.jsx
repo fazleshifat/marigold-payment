@@ -4,7 +4,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Navbar = () => {
-    const { user, setUser, balance, setBalance, userImageURL, setUserImageURL, userSignOut } = useContext(AuthContext);
+    const { user, setUser, balance, setBalance, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL, userSignOut } = useContext(AuthContext);
 
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -104,7 +104,7 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-md dropdown-content bg-base-100 rounded-box z-10 mt-3 w-28 p-2 shadow">
+                    <ul tabIndex={0} className="menu menu-md dropdown-content bg-base-100 rounded-box z-10 mt-3 w-42 p-2 shadow">
                         {links}
                     </ul>
                 </div>
@@ -141,23 +141,22 @@ const Navbar = () => {
 
                                 </div>
                             </div>
-                            <ul tabIndex={0} className="menu dropdown-content bg-base-100 space-y-4 rounded-box z-10 mt-5 w-70 p-2 shadow">
+                            <ul tabIndex={0} className="menu dropdown-content bg-gray-200 space-y-4 rounded-box z-10 mt-5 w-fit p-2 shadow">
                                 <div>
                                     {
 
                                         user?.providerData?.some(p => p.providerId === 'google.com') ?
-                                            <li className='text-xl font-semibold'>
-                                                {user.email}</li> :
-                                            <li className='text-xl font-semibold'>
-                                                Mara Mari</li>
+                                            '' :
+                                            <li className='text-md font-semibold'>
+                                                {defaultUserName}</li>
                                     }
-                                    <li className='text-xl text-gray-500'>{user.email || 'mara@mari.com'}</li>
+                                    <li className='text-lg text-gray-500'>{user.email || 'mara@mari.com'}</li>
                                 </div>
-                                <div className='flex gap-2 text-xl border-b-2'>
+                                <div className='flex gap-2 text-md border-b border-gray-500'>
                                     <li>Balance:</li>
                                     <li className='italic text-yellow-500 font-bold'>{balance} BDT</li>
                                 </div>
-                                <li><Link className='btn text-lg' onClick={handleSignOut}>Sign Out</Link></li>
+                                <li><Link className='btn text-md' onClick={handleSignOut}>Sign Out</Link></li>
                             </ul>
                         </div>
                     </>

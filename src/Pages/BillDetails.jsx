@@ -54,7 +54,7 @@ const BillDetails = () => {
     useEffect(() => {
         const paidBills = JSON.parse(localStorage.getItem('paidBills')) || [];
         if (paidBills.includes(bill.id)) {
-            setDisable(true); 
+            setDisable(true);
         }
     }, [bill.id]);
 
@@ -72,6 +72,12 @@ const BillDetails = () => {
     return (
         <>
             <div className="w-11/12 mx-auto py-10 grid grid-cols-1 items-center gap-6  pt-26 rounded-2xl">
+
+                <div className='mx-auto bg-white/10 space-y-3 p-2 md:py-4 md:px-6 rounded-2xl'>
+                    <h1 className='text-2xl md:text-4xl text-purple-400 font-bold text-center'>Bill Details</h1>
+                    <p className='text-sm md:text-lg text-center p-2 rounded-full bg-amber-300 font-semibold'>Please Pay your bill from here</p>
+                </div>
+
                 <div
                     key={bill.id}
                     className="w-full mx-auto md:w-7/12 shadow-sm border-2 border-cyan-200 bg-[linear-gradient(135deg,_#A21CAF_0%,_#1E3A8A_100%)] text-white rounded-2xl grid grid-cols-1 md:grid-cols-12 py-5 p-4 items-center"

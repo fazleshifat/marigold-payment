@@ -23,6 +23,10 @@ const BillsPage = () => {
 
         <>
             <div className="w-11/12  mx-auto py-10 pt-24 grid grid-cols-1 rounded-2xl">
+                <div className='mx-auto bg-white/10 space-y-3 p-2 md:py-4 md:px-6 rounded-2xl'>
+                    <h1 className='text-2xl md:text-4xl text-purple-400 font-bold text-center'>All Your Pending Bills</h1>
+                    <p className='text-sm md:text-lg text-center p-2 rounded-full bg-amber-300/45 font-semibold'>Please click the 'See Details' button to Check and PAY the bill</p>
+                </div>
                 {filteredBills.map((bill) => (
                     <div
                         key={bill.id}

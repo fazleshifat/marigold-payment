@@ -1,5 +1,4 @@
 import React, { use, useState } from 'react';
-import Navbar from '../components/Layouts/Navbar';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
@@ -8,12 +7,13 @@ const Login = () => {
 
     const { user, setUser, userSignIn, googleSignIn, setLoading } = use(AuthContext);
 
+
     const [error, setError] = useState('');
     // setError('');
 
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location);
+    // console.log(location);
 
 
     const handleLogin = (e) => {
@@ -92,7 +92,7 @@ const Login = () => {
 
                             {/* Forgot Password (centered) */}
                             <div className="text-center">
-                                <a className="link link-hover text-purple-800">Forgot password?</a>
+                                <Link to='/reset-password' className="link link-hover text-purple-800">Forgot password?</Link>
                             </div>
 
                             {/* Login Button */}

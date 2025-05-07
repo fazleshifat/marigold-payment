@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, deleteUser, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, createUserWithEmailAndPassword, deleteUser, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { getAuth } from "firebase/auth";
 import { app } from '../../Firebase/firebase.config';
@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
     const [userImageURL, setUserImageURL] = useState('');
     const [loading, setLoading] = useState(true);
 
-    console.log(userImageURL, defaultUserName)
+    // console.log(defaultUserName, userImageURL)
 
     const [balance, setBalance] = useState(() => {
         const storedBalance = localStorage.getItem("userBalance");
@@ -40,10 +40,22 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    const userUpdate = (updateData) => {
+        setLoading(true);
+        return updateProfile(auth.currentUser, updateData);
+    }
+
+    const userPasswordReset = (email) => {
+        setLoading(true);
+        return sendPasswordResetEmail(auth, email);
+    }
+
     const userSignOut = () => {
         setLoading(true);
         return signOut(auth);
     }
+
+
 
     // Account with Google
 
@@ -82,6 +94,8 @@ const AuthProvider = ({ children }) => {
         createUser,
         userSignIn,
         googleSignIn,
+        userUpdate,
+        userPasswordReset,
         userSignOut
     }
 
