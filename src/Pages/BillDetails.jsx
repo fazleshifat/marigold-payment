@@ -28,8 +28,8 @@ const BillDetails = () => {
         e.preventDefault();
 
         if (!selectedBank) {
-            setError("Please select a bank before proceeding.");
-            toast("Please select a bank before proceeding.");
+            setError("⚠️Please select a bank before proceeding.");
+            toast("⚠️Please select a bank before proceeding.");
             return;
         }
 
@@ -54,14 +54,14 @@ const BillDetails = () => {
     useEffect(() => {
         const paidBills = JSON.parse(localStorage.getItem('paidBills')) || [];
         if (paidBills.includes(bill.id)) {
-            setDisable(true); // Already paid
+            setDisable(true); 
         }
     }, [bill.id]);
 
 
 
     const handleDuplicateBillPay = () => {
-        toast('Bill Already Paid!')
+        toast('🛑Bill Already Paid!')
     }
 
 

@@ -2,18 +2,28 @@ import React from 'react';
 import Footer from '../components/Layouts/Footer';
 import { use } from 'react';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
+import UpdateProfile from './UpdateProfile';
+import { useState } from 'react';
 
 const Profile = () => {
 
     const { user } = use(AuthContext);
-    console.log(user.photoURL)
+    // console.log(user.photoURL)
+
+    const [editProfile, setEditProfile] = useState(false);
+
+    const handleEditProfile = () => {
+        setEditProfile(true);
+    }
+
+
 
     return (
         <>
             <div className=" pt-30 pb-10 md:pt-40 md:pb-30 bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 min-h-screen flex items-center justify-center px-4">
                 {/* User Card / Dashboard */}
                 <div class="w-full max-w-md bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden">
-                    
+
 
                     <h1 className=" text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-00 to-purple-50 mx-auto pt-6 text-center">
                         Profile
@@ -31,11 +41,13 @@ const Profile = () => {
                         />
                         {/* Edit Button back to bottom-right of avatar */}
                         <button
+                            onClick={handleEditProfile}
                             className="cursor-pointer absolute right-22 md:right-38 bottom-11 bg-white p-2 rounded-full shadow-md hover:bg-gray-300 transition-colors duration-300"
                             aria-label="Edit profile"
                         >
                             <img src="/assets/edit.png" className="w-8 h-8" alt="edit" />
                         </button>
+
                         {/* Member Badge fixed */}
                         <div className="mt-4 inline-flex items-center bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full z-10">
                             <img src="/assets/membership.png" className="w-8 h-8 mr-2 rounded-full" alt="Member Logo" />
@@ -72,7 +84,11 @@ const Profile = () => {
                             <span className="text-white/80 text-sm">Favorites</span>
                         </div>
                     </div>
+
+                    {/* functional component for Edit Profile */}
+                    <UpdateProfile></UpdateProfile>
                 </div>
+
             </div>
 
 

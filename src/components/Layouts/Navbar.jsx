@@ -27,14 +27,14 @@ const Navbar = () => {
                 setUser(null);
                 navigate('/login')
                 toast((
-                    'Signed out successful! Still you can visit the homepage!'
+                    '✅Signed out successful! Still you can visit the Homepage☺!🤗'
                 ));
                 // localStorage.removeItem('userBalance');
                 localStorage.removeItem('paidBills');
                 setBalance(10000);
             })
             .catch((error) => {
-                console.log(error.code);
+                // console.log(error.code);
             });
     };
 
@@ -66,6 +66,7 @@ const Navbar = () => {
                         tabIndex={0}
                         className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-[999]"
                     >
+                        <li><Link to="/bills-page">All</Link></li>
                         <li><Link to="/bills-page?category=Electricity">Electricity</Link></li>
                         <li><Link to="/bills-page?category=Water">Water</Link></li>
                         <li><Link to="/bills-page?category=Internet">Internet</Link></li>

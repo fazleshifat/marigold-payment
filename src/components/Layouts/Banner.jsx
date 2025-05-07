@@ -56,35 +56,77 @@ const Banner = () => {
 
 
             <Swiper
-
-                className='w-11/12 md:w-6/12'
+                className="w-11/12 md:w-6/12 md:h-[400px] flex items-center"
                 modules={[Navigation, Pagination, A11y]}
-
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
-            // onSlideChange={() => console.log('slide change')}
-            // onSwiper={(swiper) => console.log(swiper)}
             >
                 <SwiperSlide>
-                    <img className='w-full mx-auto' src="/assets/slide-4.png" alt="slide" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img className='w-10/12 mx-auto' src="/assets/slide-1.png" alt="slide" />
-                </SwiperSlide>
-                {/* 
-                <SwiperSlide>
-                    <img className='w-10/12 mx-auto' src="/assets/slide-2.jpg" alt="slide"  />
-                </SwiperSlide> */}
-
-                <SwiperSlide>
-                    <img className='w-10/12 mx-auto' src="/assets/slide-3.png" alt="slide" />
-
+                    <img
+                        className="w-8/12 mx-auto mt-20 animate-pulse"
+                        src="/assets/nagad-preview.png"
+                        alt="nagad"
+                    />
                 </SwiperSlide>
 
+                <SwiperSlide>
+                    <img
+                        className="w-8/12 mx-auto mt-20 animate-pulse"
+                        src="/assets/bkash-preview.png"
+                        alt="bkash"
+                    />
+                </SwiperSlide>
 
+                <SwiperSlide>
+                    <img
+                        className="w-6/12 mx-auto mt-20 animate-pulse"
+                        src="/assets/upay-preview.png"
+                        alt="upay"
+                    />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img
+                        className="w-8/12 mx-auto mt-1 animate-pulse"
+                        src="/assets/sure-preview.png"
+                        alt="sure"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        className="w-8/12 mx-auto mt-20 animate-pulse"
+                        src="/assets/nagad-preview.png"
+                        alt="nagad"
+                    />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img
+                        className="w-8/12 mx-auto mt-20 animate-pulse"
+                        src="/assets/bkash-preview.png"
+                        alt="bkash"
+                    />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img
+                        className="w-6/12 mx-auto mt-20 animate-pulse"
+                        src="/assets/upay-preview.png"
+                        alt="upay"
+                    />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img
+                        className="w-8/12 mx-auto mt-1 animate-pulse"
+                        src="/assets/sure-preview.png"
+                        alt="sure"
+                    />
+                </SwiperSlide>
             </Swiper>
+
 
         </div>
 

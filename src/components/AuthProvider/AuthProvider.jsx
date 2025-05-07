@@ -13,9 +13,12 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
-    const [userImageURL, setUserImageURL] = useState(null);
+
+    const [defaultUserName, setDefaultUserName] = useState('');
+    const [userImageURL, setUserImageURL] = useState('');
     const [loading, setLoading] = useState(true);
 
+    console.log(userImageURL, defaultUserName)
 
     const [balance, setBalance] = useState(() => {
         const storedBalance = localStorage.getItem("userBalance");
@@ -72,6 +75,8 @@ const AuthProvider = ({ children }) => {
         balance,
         loading,
         setLoading,
+        defaultUserName,
+        setDefaultUserName,
         userImageURL,
         setUserImageURL,
         createUser,

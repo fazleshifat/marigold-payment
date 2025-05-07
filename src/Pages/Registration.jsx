@@ -2,10 +2,11 @@ import React, { use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Registration = () => {
 
-    const { createUser, user, setUser, setUserImageURL, googleSignIn, loading, setLoading } = use(AuthContext);
+    const { createUser, user, setUser, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL, googleSignIn, loading, setLoading } = use(AuthContext);
     const [error, setError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
@@ -14,15 +15,20 @@ const Registration = () => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
-        const image = form.photo_url.value;
+        const image = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        setDefaultUserName(name);
+        setUserImageURL(image);
+        console.log(1, defaultUserName, 2, userImageURL)
 
 
         createUser(email, password)
             .then((result) => {
                 navigate('/');
                 // alert('registration complete');
+                toast('✅Registration success!')
                 setUser(result.user);
 
             }).catch((error) => {
@@ -35,12 +41,13 @@ const Registration = () => {
     const handleGoogleRegister = () => {
         googleSignIn()
             .then((result) => {
-                console.log('google loggedIn success |', user)
+                // console.log('google loggedIn success |', user)
                 setUser(result.user);
                 navigate(location?.state || "/");
+                toast('✅Successfully registered with Google Account!');
             })
             .catch((error) => {
-                console.log(error.code)
+                // console.log(error.code)
             })
     }
 
@@ -68,7 +75,7 @@ const Registration = () => {
                             {/* Photo URL */}
                             <div>
                                 <label className="label text-purple-700">Photo URL</label>
-                                <input type="text" name="photo_url" className="input w-full bg-white/70 focus:bg-white border-purple-300" placeholder="photo_URL" />
+                                <input type="text" name="photo" className="input w-full bg-white/70 focus:bg-white border-purple-300" placeholder="photo_URL" />
                             </div>
 
                             {/* Password */}
