@@ -63,19 +63,20 @@ const Profile = () => {
                     </div>
 
 
+                    {/* User Info with demo name */}
+                    <div className="p-6 text-center space-y-2">
+                        {/* Demo Name */}
+                        <h2 className="text-3xl font-extrabold text-white">{user?.displayName || defaultUserName}</h2>
+                        {/* Email */}
+                        <p className="text-white/80">{user?.email || 'email not found'}</p>
+                    </div>
 
                     {/* functional component for Edit Profile */}
                     {
                         !editProfile ?
                             (
                                 <>
-                                    {/* User Info with demo name */}
-                                    <div className="p-6 text-center space-y-2">
-                                        {/* Demo Name */}
-                                        <h2 className="text-3xl font-extrabold text-white">{user?.displayName || defaultUserName}</h2>
-                                        {/* Email */}
-                                        <p className="text-white/80">{user?.email || 'email not found'}</p>
-                                    </div>
+
 
                                     {/* Stats */}
                                     <div className="flex flex-wrap px-3 pb-8 gap-3 text-center">

@@ -4,10 +4,14 @@ import { AuthContext } from '../components/AuthProvider/AuthProvider';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
+import { getAuth, updateProfile } from 'firebase/auth';
+import { app } from '../Firebase/firebase.config';
+
+const auth = getAuth(app)
 
 const Registration = () => {
 
-    const { createUser, user, setUser, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL, googleSignIn, loading, setLoading } = use(AuthContext);
+    const { createUser, user, setUser, userUpdate, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL, googleSignIn, loading, setLoading } = use(AuthContext);
     const [error, setError] = useState('');
     const [passError, setPassError] = useState('');
     const location = useLocation();
@@ -17,19 +21,19 @@ const Registration = () => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
-        const image = form.photo.value;
+        const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
 
 
         setDefaultUserName(name);
-        setUserImageURL(image);
+        setUserImageURL(photo);
 
 
 
 
 
-        console.log(1, defaultUserName, 2, userImageURL)
+        // console.log(1, defaultUserName, 2, userImageURL)
 
 
         createUser(email, password)
@@ -61,6 +65,19 @@ const Registration = () => {
             setPassError("Password must contain at least one lowercase letter.");
             return;
         }
+
+        const profile = {
+            displayName: name,
+            photoURL: photo
+        }
+        updateProfile(auth.currentUser, profile)
+            .then(() => {
+                toast('user updated');
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
 
 
     }

@@ -18,11 +18,12 @@ const AuthProvider = ({ children }) => {
     const [userImageURL, setUserImageURL] = useState('');
     const [loading, setLoading] = useState(true);
 
+
     // console.log(defaultUserName, userImageURL)
 
     const [balance, setBalance] = useState(() => {
         const storedBalance = localStorage.getItem("userBalance");
-        return storedBalance ? parseFloat(storedBalance) : 10000; // default value
+        return storedBalance ? parseFloat(storedBalance) : 10000;
     });
 
     useEffect(() => {
@@ -40,10 +41,10 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const userUpdate = (updateData) => {
-        setLoading(true);
-        return updateProfile(auth.currentUser, updateData);
-    }
+    // const userUpdate = (updateData) => {
+    //     setLoading(true);
+    //     return updateProfile(auth.currentUser, updateData);
+    // }
 
     const userPasswordReset = (email) => {
         setLoading(true);
@@ -69,7 +70,12 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                // console.log(user.providerData)
+
+                console.log(user)
+                console.log(user.displayName)
+                console.log(user.email)
+                console.log(user.photoURL)
+
             } else {
                 setUser(null);
             }
@@ -94,7 +100,7 @@ const AuthProvider = ({ children }) => {
         createUser,
         userSignIn,
         googleSignIn,
-        userUpdate,
+        // userUpdate,
         userPasswordReset,
         userSignOut
     }

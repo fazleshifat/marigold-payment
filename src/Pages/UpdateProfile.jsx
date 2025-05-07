@@ -41,8 +41,6 @@ const UpdateProfile = ({ setEditProfile }) => {
                         <input
                             name='photo'
                             type="text"
-                            // value={photo}
-                            // onChange={(e) => setPhoto(e.target.value)}
                             className="input input-bordered w-full"
                         />
                     </div>
