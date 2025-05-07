@@ -1,14 +1,17 @@
 import React from 'react';
-import { Link, useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useNavigate, useParams } from 'react-router';
 import Footer from '../components/Layouts/Footer';
 import { useState } from 'react';
 import { use } from 'react';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
+import { useEffect } from 'react';
 
 const BillDetails = () => {
 
     const { balance, setBalance } = use(AuthContext);
+
+    const navigate = useNavigate();
 
     const billData = useLoaderData();
     const { id } = useParams();
@@ -17,11 +20,52 @@ const BillDetails = () => {
 
     const bill = billData.find((eachBill) => eachBill.id === parseInt(id));
 
-    const handleBillPay = () => {
-        const remainingBalance = (balance - bill.amount)
-        setBalance(remainingBalance);
-        toast('Bill Paid Successfully!')
+    const [selectedBank, setSelectedBank] = useState("");
+    const [error, setError] = useState('');
+    const [disable, setDisable] = useState(false);
+
+    const handleBillPay = (e) => {
+        e.preventDefault();
+
+        if (!selectedBank) {
+            setError("Please select a bank before proceeding.");
+            toast("Please select a bank before proceeding.");
+            return;
+        }
+
+        setError("");
+        setDisable(true);
+        setBalance(balance - bill.amount);
+        toast.success('✅ Bill Paid Successfully!');
+
+        const paidBills = JSON.parse(localStorage.getItem('paidBills')) || [];
+        if (!paidBills.includes(bill.id)) {
+            paidBills.push(bill.id);
+            localStorage.setItem('paidBills', JSON.stringify(paidBills));
+        }
+
+        setTimeout(() => {
+            navigate('/bills-page');
+        }, 1000);
+    };
+
+
+
+    useEffect(() => {
+        const paidBills = JSON.parse(localStorage.getItem('paidBills')) || [];
+        if (paidBills.includes(bill.id)) {
+            setDisable(true); // Already paid
+        }
+    }, [bill.id]);
+
+
+
+    const handleDuplicateBillPay = () => {
+        toast('Bill Already Paid!')
     }
+
+
+
 
 
 
@@ -58,13 +102,44 @@ const BillDetails = () => {
                         </h2>
                         <h2 className="card-title font-semibold">Due date: {bill.due_date}</h2>
 
-                        <Link
-                            onClick={handleBillPay}
-                            to={`/bills-details/${bill.id}`}
-                            className="btn w-full md:w-42 btn-success px-6 text-white font-bold"
+
+                        {/* Dropdown to select bank */}
+                        <select
+                            className="select select-bordered md:w-fit w-full text-black  required:"
+                            value={selectedBank}
+                            onChange={(e) => {
+                                setSelectedBank(e.target.value);
+                                if (e.target.value) {
+                                    setError(""); // ✅ Clear error when bank is selected
+                                }
+                            }}
                         >
-                            Pay bills
-                        </Link>
+                            <option value="">Select Bank</option>
+                            <option value="DBBL">Dutch-Bangla Bank</option>
+                            <option value="Bkash">bKash</option>
+                            <option value="Nagad">Nagad</option>
+                            <option value="Rocket">Rocket</option>
+                        </select>
+
+                        <p className='text-red-500'>{error}</p>
+
+                        {
+                            !disable ? (
+                                <button
+                                    onClick={handleBillPay}
+                                    className="btn w-full md:w-42 btn-success px-6 text-white font-bold"
+                                >
+                                    Pay bills
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={handleDuplicateBillPay}
+                                    className="btn w-full md:w-42 bg-warning text-black font-bold"
+                                >
+                                    Paid ✅!
+                                </button>
+                            )
+                        }
                     </div>
                 </div>
             </div>

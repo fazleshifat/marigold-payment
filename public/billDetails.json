@@ -12,7 +12,7 @@
         "id": 2,
         "bill_type": "water",
         "icon": "https://i.ibb.co/HT4wdwgL/water.png",
-        "organization": "WASA",
+        "organization": "Chattogram WASA",
         "amount": 760,
         "due_date": "2025-04-05",
         "companyName": "http://i.ibb.co/6MmNjd5/wasa.png"
@@ -70,5 +70,50 @@
         "amount": 1230,
         "due_date": "2025-04-18",
         "companyName": "https://i.ibb.co/Wvh9gBgx/bakhrabad-gas-system-ltd.jpg"
+    },
+    {
+        "id": 9,
+        "bill_type": "water",
+        "icon": "https://i.ibb.co/HT4wdwgL/water.png",
+        "organization": "Dhaka WASA",
+        "amount": 820,
+        "due_date": "2025-04-22",
+        "companyName": "https://i.ibb.co/hF0Xhx01/wasa2.jpg"
+    },
+    {
+        "id": 10,
+        "bill_type": "internet",
+        "icon": "https://cdn-icons-png.flaticon.com/512/483/483947.png",
+        "organization": "Carnival Internet",
+        "amount": 999,
+        "due_date": "2025-04-28",
+        "companyName": "https://logo.clearbit.com/carnival.com.bd"
+    },
+    {
+        "id": 11,
+        "bill_type": "mobile",
+        "icon": "https://cdn-icons-png.flaticon.com/512/483/483947.png",
+        "organization": "Banglalink",
+        "amount": 399,
+        "due_date": "2025-04-19",
+        "companyName": "https://logo.clearbit.com/banglalink.net"
+    },
+    {
+        "id": 12,
+        "bill_type": "tv",
+        "icon": "https://cdn-icons-png.flaticon.com/512/3103/3103464.png",
+        "organization": "Dish Network",
+        "amount": 870,
+        "due_date": "2025-04-21",
+        "companyName": "https://logo.clearbit.com/dish.com"
+    },
+    {
+        "id": 13,
+        "bill_type": "gas",
+        "icon": "https://cdn-icons-png.flaticon.com/512/2917/2917995.png",
+        "organization": "Titas Gas",
+        "amount": 1180,
+        "due_date": "2025-04-25",
+        "companyName": "https://logo.clearbit.com/titasgas.org.bd"
     }
 ]

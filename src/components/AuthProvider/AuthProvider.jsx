@@ -13,9 +13,18 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
-    const [balance, setBalance] = useState(10000);
     const [userImageURL, setUserImageURL] = useState(null);
-    const [loading, setLoading] = useState(true); // initially true
+    const [loading, setLoading] = useState(true);
+
+
+    const [balance, setBalance] = useState(() => {
+        const storedBalance = localStorage.getItem("userBalance");
+        return storedBalance ? parseFloat(storedBalance) : 10000; // default value
+    });
+
+    useEffect(() => {
+        localStorage.setItem("userBalance", balance);
+    }, [balance]);
 
 
     // account with Email 

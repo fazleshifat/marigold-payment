@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router';
+import { Link, useLoaderData, useLocation } from 'react-router';
 import Footer from '../components/Layouts/Footer';
 
 const BillsPage = () => {
@@ -8,12 +8,22 @@ const BillsPage = () => {
     // console.log(typeof billData[0].id)
 
 
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const selectedCategory = queryParams.get('category');
+    console.log('1', location, '2', queryParams, '3', selectedCategory)
+
+    const filteredBills = selectedCategory
+        ? billData.filter(bill => bill.bill_type.toLowerCase() === selectedCategory.toLowerCase())
+        : billData;
+
+
 
     return (
 
         <>
             <div className="w-11/12  mx-auto py-10 pt-24 grid grid-cols-1 rounded-2xl">
-                {billData.map((bill) => (
+                {filteredBills.map((bill) => (
                     <div
                         key={bill.id}
                         className="w-full border-2 border-cyan-200 bg-[linear-gradient(135deg,_#A21CAF_0%,_#1E3A8A_100%)] text-gray-200 shadow-sm grid grid-cols-1 md:grid-cols-12 my-5 p-2 md:px-5 items-center rounded-2xl"

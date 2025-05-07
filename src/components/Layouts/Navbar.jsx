@@ -29,6 +29,9 @@ const Navbar = () => {
                 toast((
                     'Signed out successful! Still you can visit the homepage!'
                 ));
+                // localStorage.removeItem('userBalance');
+                localStorage.removeItem('paidBills');
+                setBalance(10000);
             })
             .catch((error) => {
                 console.log(error.code);
@@ -52,23 +55,27 @@ const Navbar = () => {
             </li>
 
             <li className="relative group text-lg font-semibold transition duration-300 ease-in-out">
-                <NavLink
-                    to="/bills-page"
-                    className="relative inline-block text-[#9b86c1] group-hover:text-sky-600 transition duration-300 ease-in-out"
-                >
-                    <div className="dropdown dropdown-bottom">
-                        <div tabIndex={0} role="button" className="m-1">Bills ⬇️</div>
-                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 2</a></li>
-                        </ul>
-                    </div>
-                    <span
-                        className="absolute left-1/2 bottom-0 w-0 h-[2px] bg-purple-600 transition-all duration-300 ease-in-out
-            group-hover:w-full group-hover:left-0"
-                    ></span>
-                </NavLink>
+                <div className="dropdown dropdown-hover">
+                    <Link
+                        to="/bills-page"
+                        className="m-1 cursor-pointer text-[#9b86c1] group-hover:text-sky-600 transition duration-300 ease-in-out"
+                    >
+                        Bills Category
+                    </Link>
+                    <ul
+                        tabIndex={0}
+                        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-[999]"
+                    >
+                        <li><Link to="/bills-page?category=Electricity">Electricity</Link></li>
+                        <li><Link to="/bills-page?category=Water">Water</Link></li>
+                        <li><Link to="/bills-page?category=Internet">Internet</Link></li>
+                        <li><Link to="/bills-page?category=Mobile">Mobile</Link></li>
+                        <li><Link to="/bills-page?category=TV">TV</Link></li>
+                        <li><Link to="/bills-page?category=Gas">Gas</Link></li>
+                    </ul>
+                </div>
             </li>
+
 
             <li className="relative group text-lg font-semibold transition duration-300 ease-in-out">
                 <NavLink
@@ -139,9 +146,9 @@ const Navbar = () => {
 
                                         user?.providerData?.some(p => p.providerId === 'google.com') ?
                                             <li className='text-xl font-semibold'>
-                                            {user.email}</li> :
+                                                {user.email}</li> :
                                             <li className='text-xl font-semibold'>
-                                            Mara Mari</li>
+                                                Mara Mari</li>
                                     }
                                     <li className='text-xl text-gray-500'>{user.email || 'mara@mari.com'}</li>
                                 </div>
