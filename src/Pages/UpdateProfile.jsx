@@ -8,7 +8,7 @@ import { Link } from 'react-router';
 
 const UpdateProfile = ({ setEditProfile }) => {
 
-    const { user } = use(AuthContext);
+    const { user, setUser } = use(AuthContext);
 
 
     const handleEditProfile = (e) => {
@@ -24,13 +24,8 @@ const UpdateProfile = ({ setEditProfile }) => {
                 console.log(error.message);
             });
 
-        // const updatedUser = { ...user, displayName: name, photoURL: photo };
-        // setUser(updatedUser);
-    }
-
-    const handleCancelEdit = () => {
-
-        setEditProfile(false);
+        const updatedUser = { ...user, displayName: name, photoURL: photo };
+        setUser(updatedUser);
     }
 
 
