@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { app } from '../Firebase/firebase.config';
+import { FcGoogle } from "react-icons/fc";
 
 const auth = getAuth(app)
 
@@ -102,8 +103,8 @@ const Registration = () => {
 
     return (
         <>
-            <div className="w-full pt-14 flex h-screen items-center justify-center px-4 md:px-0 bg-gradient-to-br from-purple-100 via-pink-50 to-sky-100">
-                <div className="card w-full md:w-3/4 lg:w-2/5 mx-auto shadow-2xl rounded-2xl overflow-hidden bg-gradient-to-br from-purple-200 via-pink-200 to-blue-200">
+            <div className="w-full pt-14 py-24 md:py-32 flex h-auto min-h-screen items-center justify-center px-4 md:px-0 bg-gradient-to-br from-purple-100 via-pink-50 to-sky-100">
+                <div className="card w-full my-10 md:my-0 md:w-3/4 lg:max-w-xl mx-auto shadow-2xl rounded-2xl overflow-hidden bg-gradient-to-br from-purple-200 via-pink-200 to-blue-200">
                     <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mx-auto pt-6 text-center">
                         Registration
                     </h1>
@@ -119,7 +120,6 @@ const Registration = () => {
                             <div>
                                 <label className="label text-purple-700">Email</label>
                                 <input type="email" name="email" className="input w-full bg-white/70 focus:bg-white border-purple-300" placeholder="Email" />
-
                             </div>
 
                             {/* Photo URL */}
@@ -176,7 +176,6 @@ const Registration = () => {
                     </div>
                 </div>
             </div>
-
 
         </>
     );

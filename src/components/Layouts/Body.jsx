@@ -15,7 +15,6 @@ const Body = () => {
             <Collaboration></Collaboration>
             <Achievements></Achievements>
             <Offers></Offers>
-            <Footer></Footer>
         </div>
     );
 };

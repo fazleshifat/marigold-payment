@@ -114,8 +114,6 @@ const BillsPage = () => {
 
             </div>
 
-
-            <Footer></Footer>
         </>
 
     );

@@ -114,9 +114,6 @@ const UpdateProfile = ({ setEditProfile }) => {
 
             </div>
 
-            <Footer></Footer>
-
-
         </>
     );
 };

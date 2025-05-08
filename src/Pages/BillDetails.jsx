@@ -150,8 +150,6 @@ const BillDetails = () => {
                 </div>
             </div>
 
-
-            <Footer></Footer>
         </>
     );
 };
