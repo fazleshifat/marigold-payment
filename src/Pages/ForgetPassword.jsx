@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 const ForgetPassword = () => {
 
-    const { userPasswordReset } = use(AuthContext);
+    const { userPasswordReset, setLoading } = use(AuthContext);
 
     const emailRef = useRef();
 
@@ -21,6 +21,7 @@ const ForgetPassword = () => {
 
         userPasswordReset(email);
         toast(`Password reset link sent to ${email}`);
+        setLoading(false);
     };
 
     return (
