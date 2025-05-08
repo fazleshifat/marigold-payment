@@ -17,19 +17,19 @@ const Profile = () => {
 
     return (
         <>
-            <div className=" pt-30 pb-10 md:pt-40 md:pb-30 bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 min-h-screen flex items-center justify-center px-4">
+            <div className="py-22 bg-gradient-to-br from-purple-800 via-pink-600 to-indigo-700 min-h-screen flex items-center justify-center px-4">
                 {/* User Card / Dashboard */}
                 <div className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden">
 
 
-                    <h1 className=" text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-00 to-purple-50 mx-auto pt-6 text-center">
+                    <h1 className=" text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-00 to-purple-50 mx-auto pt-2 text-center">
                         Profile
                     </h1>
 
                     {/* Avatar Section */}
-                    <div className="relative flex flex-col items-center pt-8">
+                    <div className="relative flex flex-col items-center pt-4">
                         {/* Blinking shadow under image */}
-                        <div className="absolute top-16 w-28 h-28 rounded-full bg-white/70 animate-ping"></div>
+                        <div className="absolute top-12 w-28 h-28 rounded-full bg-white/70 animate-ping"></div>
                         {/* Avatar */}
                         <img
                             className="relative w-44 h-44 object-cover border-4 border-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.5)]"
@@ -69,7 +69,7 @@ const Profile = () => {
 
 
                     {/* Stats */}
-                    <div className="flex flex-wrap px-3 pb-8 gap-3 text-center">
+                    <div className="flex mx-auto items-center justify-center flex-wrap px-3 pb-4 gap-3 text-center">
                         {/* Paid Bills */}
                         <div className="flex items-center justify-center px-2 gap-2 bg-gradient-to-tr from-green-400 to-green-600 rounded-xl shadow-md">
                             <svg className="w-6 h-6 mx-auto text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 00-1.414 0L9 11.586 6.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l7-7a1 1 0 000-1.414z" /></svg>

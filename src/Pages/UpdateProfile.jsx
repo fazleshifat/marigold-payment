@@ -46,7 +46,7 @@ const UpdateProfile = ({ setEditProfile }) => {
 
 
             <div className='min-h-screen bg-black/60 mx-auto flex items-center justify-center'>
-                <div className='w-11/12 max-w-sm md:max-w-md my-28 p-6 bg-white/30 rounded-2xl shadow-md'>
+                <div className='w-11/12 max-w-sm md:max-w-md my-22 p-6 bg-white/15 rounded-2xl shadow-md'>
 
                     {/* Avatar & User Info */}
                     <div className="flex flex-col justify-center items-center text-center mb-2">

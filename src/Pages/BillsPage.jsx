@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useLoaderData, useLocation } from 'react-router';
+import { Link, useLoaderData, useLocation, useNavigate } from 'react-router';
 import Footer from '../components/Layouts/Footer';
 import { use } from 'react';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
 
 const promiseCategory = fetch("/billCategory.json").then((res) => res.json());
+
 
 const BillsPage = () => {
 
@@ -15,6 +16,14 @@ const BillsPage = () => {
 
     const billData = useLoaderData();
     // console.log(typeof billData[0].id)
+
+    const navigate = useNavigate();
+
+    const handleCategoryChange = (e) => {
+        const selectedName = e.target.value;
+        setSelectedCategory(selectedName);
+        navigate('/bills-page'); // Navigate to the target page
+    };
 
 
     const filteredBills =
@@ -37,10 +46,33 @@ const BillsPage = () => {
                     </p>
 
                     {selectedCategory && (
-                        <p className="text-center mt-2 text-sm md:text-xl text-cyan-900 font-semibold">
-                            Showing bills from category: <span className="uppercase font-bold text-amber-300 underline">{selectedCategory}</span>
-                        </p>
+                        <div className="text-center mx-auto relative group text-lg font-semibold transition duration-300 ease-in-out">
+                            <div className="dropdown dropdown-hover m-1 cursor-pointer text-gray-100 transition duration-300 ease-in-out">
+                                <Link
+                                    to="/bills-page"
+                                    className="m-1 text-center w-fit mx-auto cursor-pointer group-hover:text-gray-200 transition duration-300 ease-in-out"
+                                >
+                                    Bills Category 🡇
+                                </Link>
+                                <ul
+                                    tabIndex={0}
+                                    className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-[1999]"
+                                >
+
+                                    {categoryData.map(category => (
+                                        <li key={category.id} className='text-black'><Link to='/bills-page' onClick={() => setSelectedCategory(category.name)}>
+                                            {category.name}
+                                        </Link></li>
+                                    ))}
+
+
+                                </ul>
+                            </div>
+                        </div>
                     )}
+
+
+
                 </div>
                 {filteredBills.map((bill) => {
                     const paidBillIds = JSON.parse(localStorage.getItem('paidBills')) || [];
