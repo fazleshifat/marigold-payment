@@ -16,6 +16,8 @@ const AuthProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
 
+    const [selectedCategory, setSelectedCategory] = useState("all");
+
 
     // console.log(defaultUserName, userImageURL)
 
@@ -85,8 +87,11 @@ const AuthProvider = ({ children }) => {
     }, [])
 
     const authData = {
+        auth,
         user,
         setUser,
+        selectedCategory,
+        setSelectedCategory,
         setBalance,
         balance,
         loading,

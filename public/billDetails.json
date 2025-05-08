@@ -4,7 +4,7 @@
         "bill_type": "electricity",
         "icon": "https://i.ibb.co/C37P3Wx9/electricity.png",
         "organization": "DESCO",
-        "amount": 1890,
+        "amount": 390,
         "due_date": "2025-03-22",
         "companyName": "https://logo.clearbit.com/desco.org.bd"
     },
@@ -13,7 +13,7 @@
         "bill_type": "water",
         "icon": "https://i.ibb.co/HT4wdwgL/water.png",
         "organization": "Chattogram WASA",
-        "amount": 760,
+        "amount": 460,
         "due_date": "2025-04-05",
         "companyName": "http://i.ibb.co/6MmNjd5/wasa.png"
     },
@@ -22,7 +22,7 @@
         "bill_type": "electricity",
         "icon": "https://i.ibb.co/C37P3Wx9/electricity.png",
         "organization": "NESCO",
-        "amount": 1220,
+        "amount": 220,
         "due_date": "2025-04-18",
         "companyName": "https://logo.clearbit.com/nesco.gov.bd"
     },
@@ -31,7 +31,7 @@
         "bill_type": "internet",
         "icon": "https://cdn-icons-png.flaticon.com/512/483/483947.png",
         "organization": "Link3",
-        "amount": 1350,
+        "amount": 350,
         "due_date": "2025-04-15",
         "companyName": "https://logo.clearbit.com/link3.net"
     },
@@ -40,7 +40,7 @@
         "bill_type": "electricity",
         "icon": "https://i.ibb.co/C37P3Wx9/electricity.png",
         "organization": "Palli Bidyut",
-        "amount": 2050,
+        "amount": 150,
         "due_date": "2025-04-10",
         "companyName": "http://i.ibb.co/4w30vTgM/palli-Biddut.jpg"
     },
@@ -49,7 +49,7 @@
         "bill_type": "mobile",
         "icon": "https://cdn-icons-png.flaticon.com/512/483/483947.png",
         "organization": "Grameenphone",
-        "amount": 599,
+        "amount": 299,
         "due_date": "2025-04-08",
         "companyName": "https://logo.clearbit.com/grameenphone.com"
     },
@@ -58,7 +58,7 @@
         "bill_type": "tv",
         "icon": "https://cdn-icons-png.flaticon.com/512/3103/3103464.png",
         "organization": "Akash DTH",
-        "amount": 950,
+        "amount": 150,
         "due_date": "2025-04-12",
         "companyName": "https://logo.clearbit.com/akashdth.com"
     },
@@ -67,7 +67,7 @@
         "bill_type": "gas",
         "icon": "https://cdn-icons-png.flaticon.com/512/2917/2917995.png",
         "organization": "Bakhrabad Gas",
-        "amount": 1230,
+        "amount": 230,
         "due_date": "2025-04-18",
         "companyName": "https://i.ibb.co/Wvh9gBgx/bakhrabad-gas-system-ltd.jpg"
     },
@@ -85,7 +85,7 @@
         "bill_type": "internet",
         "icon": "https://cdn-icons-png.flaticon.com/512/483/483947.png",
         "organization": "Carnival Internet",
-        "amount": 999,
+        "amount": 399,
         "due_date": "2025-04-28",
         "companyName": "https://logo.clearbit.com/carnival.com.bd"
     },
@@ -94,7 +94,7 @@
         "bill_type": "mobile",
         "icon": "https://cdn-icons-png.flaticon.com/512/483/483947.png",
         "organization": "Banglalink",
-        "amount": 399,
+        "amount": 499,
         "due_date": "2025-04-19",
         "companyName": "https://logo.clearbit.com/banglalink.net"
     },
@@ -103,7 +103,7 @@
         "bill_type": "tv",
         "icon": "https://cdn-icons-png.flaticon.com/512/3103/3103464.png",
         "organization": "Dish Network",
-        "amount": 870,
+        "amount": 270,
         "due_date": "2025-04-21",
         "companyName": "https://logo.clearbit.com/dish.com"
     },
@@ -112,7 +112,7 @@
         "bill_type": "gas",
         "icon": "https://cdn-icons-png.flaticon.com/512/2917/2917995.png",
         "organization": "Titas Gas",
-        "amount": 1180,
+        "amount": 180,
         "due_date": "2025-04-25",
         "companyName": "https://logo.clearbit.com/titasgas.org.bd"
     }

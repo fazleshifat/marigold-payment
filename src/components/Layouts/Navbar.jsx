@@ -2,9 +2,18 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
+import { use } from 'react';
+
+const promiseCategory = fetch("/billCategory.json").then((res) => res.json());
+
 
 const Navbar = () => {
-    const { user, setUser, balance, setBalance, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL, userSignOut } = useContext(AuthContext);
+    const { user, setUser, balance, setBalance, selectedCategory, setSelectedCategory, userSignOut } = useContext(AuthContext);
+
+
+    const categoryData = use(promiseCategory);
+    // console.log(categoryData)
+
 
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -55,25 +64,28 @@ const Navbar = () => {
                 </NavLink>
             </li>
 
+            {/* NavLink of Category's with dropDown effect are here */}
+
             <li className="relative group text-lg font-semibold transition duration-300 ease-in-out">
-                <div className="dropdown dropdown-hover">
-                    <Link
+                <div className="dropdown dropdown-hover m-1 cursor-pointer text-[#9b86c1] group-hover:text-sky-600 transition duration-300 ease-in-out">
+                    <NavLink
                         to="/bills-page"
                         className="m-1 cursor-pointer text-[#9b86c1] group-hover:text-sky-600 transition duration-300 ease-in-out"
                     >
                         Bills Category 🡇
-                    </Link>
+                    </NavLink>
                     <ul
                         tabIndex={0}
                         className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-[999]"
                     >
-                        <li><Link to="/bills-page">All</Link></li>
-                        <li><Link to="/bills-page?category=Electricity">Electricity</Link></li>
-                        <li><Link to="/bills-page?category=Water">Water</Link></li>
-                        <li><Link to="/bills-page?category=Internet">Internet</Link></li>
-                        <li><Link to="/bills-page?category=Mobile">Mobile</Link></li>
-                        <li><Link to="/bills-page?category=TV">TV</Link></li>
-                        <li><Link to="/bills-page?category=Gas">Gas</Link></li>
+
+                        {categoryData.map(category => (
+                            <li key={category.id}><Link to='/bills-page' onClick={() => setSelectedCategory(category.name)}>
+                                {category.name}
+                            </Link></li>
+                        ))}
+
+
                     </ul>
                 </div>
             </li>

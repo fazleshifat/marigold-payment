@@ -5,9 +5,9 @@ const Footer = () => {
     return (
         <footer className="footer flex flex-col items-center justify-center gap-4 bg-black/30 text-neutral-content py-10 px-6 text-center md:px-16">
             {/* Company: Logo + Name */}
-            <div className="flex items-center gap-0">
+            <div className="flex justify-center items-center flex-col gap-0">
                 <img src="/assets/logo.png" alt="Logo" className="w-6 h-6" />
-                <span className="text-xl font-bold">rigold</span>
+                <span className="text-xl font-bold">Marigold</span>
             </div>
 
             <div className='md:w-2xl text-gray-400'>

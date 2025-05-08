@@ -1,24 +1,28 @@
 import React from 'react';
 import { Link, useLoaderData, useLocation } from 'react-router';
 import Footer from '../components/Layouts/Footer';
+import { use } from 'react';
+import { AuthContext } from '../components/AuthProvider/AuthProvider';
+
+const promiseCategory = fetch("/billCategory.json").then((res) => res.json());
 
 const BillsPage = () => {
+
+    const { selectedCategory, setSelectedCategory } = use(AuthContext);
+
+
+    const categoryData = use(promiseCategory);
 
     const billData = useLoaderData();
     // console.log(typeof billData[0].id)
 
 
-    const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
-    const selectedCategory = queryParams.get('category');
-    // console.log('1', location, '2', queryParams, '3', selectedCategory)
-
-    const filteredBills = selectedCategory
-        ? billData.filter(bill => bill.bill_type.toLowerCase() === selectedCategory.toLowerCase())
-        : billData;
-
-
-    // for paid status
+    const filteredBills =
+        selectedCategory.toLowerCase() !== "all"
+            ? billData.filter(
+                bill => bill.bill_type?.toLowerCase() === selectedCategory.toLowerCase()
+            )
+            : billData;
 
 
 
@@ -27,14 +31,24 @@ const BillsPage = () => {
         <>
             <div className="w-11/12  mx-auto py-10 pt-24 grid grid-cols-1 rounded-2xl">
                 <div className='mx-auto bg-white/10 space-y-3 p-2 md:py-4 md:px-6 rounded-2xl'>
-                    <h1 className='text-2xl md:text-4xl text-purple-400 font-bold text-center'>All Your Pending Bills</h1>
-                    <p className='text-sm md:text-lg text-center p-2 rounded-full bg-amber-300/45 font-semibold'>Please click the 'See Details' button to Check and PAY the bill</p>
+                    <h1 className='text-2xl md:text-2xl text-purple-400 font-bold text-center'>All Your Pending Bills</h1>
+                    <p className='text-sm md:text-sm text-center text-gray-800 p-2 rounded-full font-semibold'>
+                        Please click the 'See Details' button to Check and PAY the bill
+                    </p>
+
+                    {selectedCategory && (
+                        <p className="text-center mt-2 text-sm md:text-xl text-cyan-900 font-semibold">
+                            Showing bills from category: <span className="uppercase font-bold text-amber-300 underline">{selectedCategory}</span>
+                        </p>
+                    )}
                 </div>
                 {filteredBills.map((bill) => {
                     const paidBillIds = JSON.parse(localStorage.getItem('paidBills')) || [];
                     const isPaid = paidBillIds.includes(bill.id);
 
+
                     return (
+
                         <div
                             key={bill.id}
                             className="w-full border-2 border-cyan-200 bg-[linear-gradient(135deg,_#1E3A8A_40%,_#A21CAF_90%)] text-gray-200 shadow-sm grid grid-cols-1 md:grid-cols-12 my-5 p-2 md:px-5 items-center rounded-2xl"
@@ -93,6 +107,7 @@ const BillsPage = () => {
                                 </div>
                             </div>
                         </div>
+
                     );
                 })}
 

@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "All"
+    },
+    {
+        "id": 2,
+        "name": "Electricity"
+    },
+    {
+        "id": 3,
+        "name": "Water"
+    },
+    {
+        "id": 4,
+        "name": "Internet"
+    },
+    {
+        "id": 5,
+        "name": "Mobile"
+    },
+    {
+        "id": 6,
+        "name": "TV"
+    },
+    {
+        "id": 7,
+        "name": "Gas"
+    }
+]

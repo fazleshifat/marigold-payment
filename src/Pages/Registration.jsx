@@ -11,7 +11,7 @@ const auth = getAuth(app)
 
 const Registration = () => {
 
-    const { createUser, user, setUser, userUpdate, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL, googleSignIn, loading, setLoading } = use(AuthContext);
+    const { createUser, user, setUser, googleSignIn, setLoading } = use(AuthContext);
     const [error, setError] = useState('');
     const [passError, setPassError] = useState('');
     const location = useLocation();

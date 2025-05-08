@@ -8,24 +8,36 @@ import { Link } from 'react-router';
 
 const UpdateProfile = ({ setEditProfile }) => {
 
-    const { user, setUser } = use(AuthContext);
+    const { user, setUser, auth } = use(AuthContext);
 
 
     const handleEditProfile = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
-        updateProfile(user, {
+        updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo,
         })
             .then(() => {
                 toast('✅ User updated');
+
+                setUser({
+                    ...auth.currentUser,
+                    displayName: name,
+                    photoUrl: photo,
+                });
             }).catch((error) => {
                 console.log(error.message);
             });
 
-        const updatedUser = { ...user, displayName: name, photoURL: photo };
-        setUser(updatedUser);
+        // setUser(pre => ({
+        //     ...pre,
+        //     displayName: name,
+        //     photoUrl: phone
+        // }));
+
+        // const updatedUser = { ...user, displayName: name, photoURL: photo };
+        // setUser(updatedUser);
     }
 
 
