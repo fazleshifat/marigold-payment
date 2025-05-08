@@ -74,19 +74,23 @@ const Navbar = () => {
                     >
                         Bills Category 🡇
                     </NavLink>
-                    <ul
-                        tabIndex={0}
-                        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-[999]"
-                    >
+                    {
+                        user && (
+                            <ul
+                                tabIndex={0}
+                                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 z-[999]"
+                            >
 
-                        {categoryData.map(category => (
-                            <li key={category.id}><Link to='/bills-page' onClick={() => setSelectedCategory(category.name)}>
-                                {category.name}
-                            </Link></li>
-                        ))}
+                                {categoryData.map(category => (
+                                    <li key={category.id}><Link to='/bills-page' onClick={() => setSelectedCategory(category.name)}>
+                                        {category.name}
+                                    </Link></li>
+                                ))}
 
 
-                    </ul>
+                            </ul>
+                        )
+                    }
                 </div>
             </li>
 

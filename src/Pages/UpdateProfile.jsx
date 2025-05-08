@@ -15,11 +15,13 @@ const UpdateProfile = ({ setEditProfile }) => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
+        
         updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo,
         })
             .then(() => {
                 toast('✅ User updated');
+
 
                 setUser({
                     ...auth.currentUser,
