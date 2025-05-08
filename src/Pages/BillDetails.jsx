@@ -29,7 +29,7 @@ const BillDetails = () => {
 
         if (!selectedBank) {
             setError("⚠️Please select a bank before proceeding.");
-            toast("⚠️Please select a bank before proceeding.");
+            // toast("⚠️Please select a bank before proceeding.");
             return;
         }
 

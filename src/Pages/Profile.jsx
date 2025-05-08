@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const Profile = () => {
 
-    const { user, defaultUserName, setDefaultUserName, userImageURL, setUserImageURL } = use(AuthContext);
+    const { user } = use(AuthContext);
     // console.log(user)
 
     const [editProfile, setEditProfile] = useState(false);
@@ -66,9 +66,9 @@ const Profile = () => {
                     {/* User Info with demo name */}
                     <div className="p-6 text-center space-y-2">
                         {/* Demo Name */}
-                        <h2 className="text-3xl font-extrabold text-white">{user?.displayName || defaultUserName}</h2>
+                        <h2 className="text-3xl font-extrabold text-white">{user ? user.displayName : 'name not found'}</h2>
                         {/* Email */}
-                        <p className="text-white/80">{user?.email || 'email not found'}</p>
+                        <p className="text-white/80">{user ? user.email : 'email not found'}</p>
                     </div>
 
                     {/* functional component for Edit Profile */}

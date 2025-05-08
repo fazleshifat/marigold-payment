@@ -10,6 +10,7 @@ const Navbar = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const navigate = useNavigate();
 
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
@@ -27,7 +28,7 @@ const Navbar = () => {
                 setUser(null);
                 navigate('/login')
                 toast((
-                    '✅Signed out successful! Still you can visit the Homepage☺!🤗'
+                    '✅Signed out successful! Still you can visit the Homepage!🤗'
                 ));
                 // localStorage.removeItem('userBalance');
                 localStorage.removeItem('paidBills');
@@ -129,7 +130,7 @@ const Navbar = () => {
                                 <div className="absolute w-7 h-7 rounded-full bg-white/70 animate-ping"></div>
                                 <div className="relative w-auto rounded-full">
                                     {
-                                        user?.providerData?.some(p => p.providerId === 'google.com')
+                                        user
                                             ?
                                             <img className='w-44 border-1 border-gray-300 rounded-full' alt="User Avatar"
                                                 src={user.photoURL} />
@@ -145,10 +146,10 @@ const Navbar = () => {
                                 <div>
                                     {
 
-                                        user?.providerData?.some(p => p.providerId === 'google.com') ?
-                                            '' :
+                                        !user ?
+                                            'No name found' :
                                             <li className='text-md font-semibold'>
-                                                {defaultUserName}</li>
+                                                {user.displayName}</li>
                                     }
                                     <li className='text-lg text-gray-500'>{user.email || 'mara@mari.com'}</li>
                                 </div>

@@ -26,8 +26,8 @@ const Registration = () => {
         const password = form.password.value;
 
 
-        setDefaultUserName(name);
-        setUserImageURL(photo);
+        // setDefaultUserName(name);
+        // setUserImageURL(photo);
 
 
 
@@ -38,10 +38,27 @@ const Registration = () => {
 
         createUser(email, password)
             .then((result) => {
-                navigate('/');
+
                 // alert('registration complete');
                 toast('✅Registration success!')
                 setUser(result.user);
+
+                const profile = {
+                    displayName: name,
+                    photoURL: photo
+                }
+                updateProfile(result.user, profile)
+                    .then(() => {
+                        // toast('✅ User updated');
+                        navigate('/');
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
+
+
+
+
 
             }).catch((error) => {
                 setError(error.code);
@@ -65,18 +82,6 @@ const Registration = () => {
             setPassError("Password must contain at least one lowercase letter.");
             return;
         }
-
-        const profile = {
-            displayName: name,
-            photoURL: photo
-        }
-        updateProfile(auth.currentUser, profile)
-            .then(() => {
-                toast('user updated');
-            })
-            .catch(error => {
-                console.log(error)
-            })
 
 
 

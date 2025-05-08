@@ -1,15 +1,29 @@
 import React from 'react';
 import { use } from 'react';
 import { AuthContext } from '../components/AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const UpdateProfile = ({ setEditProfile }) => {
 
-    const { userUpdate } = use(AuthContext);
+    const { user, setUser, setLoading } = use(AuthContext);
 
 
     const handleEditProfile = (e) => {
-        e.preventDefault();
-        console.log(e.target.name.value);
+        // e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        updateProfile(user, {
+            displayName: name, photoURL: photo,
+        })
+            .then(() => {
+                toast('✅ User updated');
+            }).catch((error) => {
+                console.log(error.message);
+            });
+
+        // const updatedUser = { ...user, displayName: name, photoURL: photo };
+        // setUser(updatedUser);
     }
 
     const handleCancelEdit = () => {
@@ -33,6 +47,7 @@ const UpdateProfile = ({ setEditProfile }) => {
                             // value={name}
                             // onChange={(e) => setName(e.target.value)}
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
 
@@ -42,6 +57,7 @@ const UpdateProfile = ({ setEditProfile }) => {
                             name='photo'
                             type="text"
                             className="input input-bordered w-full"
+                            required
                         />
                     </div>
 

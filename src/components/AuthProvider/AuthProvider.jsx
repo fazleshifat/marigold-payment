@@ -14,8 +14,6 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
 
-    const [defaultUserName, setDefaultUserName] = useState('');
-    const [userImageURL, setUserImageURL] = useState('');
     const [loading, setLoading] = useState(true);
 
 
@@ -72,9 +70,9 @@ const AuthProvider = ({ children }) => {
                 setUser(user);
 
                 console.log(user)
-                console.log(user.displayName)
-                console.log(user.email)
-                console.log(user.photoURL)
+                // console.log(user.displayName)
+                // console.log(user.email)
+                // console.log(user.photoURL)
 
             } else {
                 setUser(null);
@@ -93,10 +91,6 @@ const AuthProvider = ({ children }) => {
         balance,
         loading,
         setLoading,
-        defaultUserName,
-        setDefaultUserName,
-        userImageURL,
-        setUserImageURL,
         createUser,
         userSignIn,
         googleSignIn,
