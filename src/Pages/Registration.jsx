@@ -30,10 +30,6 @@ const Registration = () => {
         // setDefaultUserName(name);
         // setUserImageURL(photo);
 
-
-
-
-
         // console.log(1, defaultUserName, 2, userImageURL)
 
 
@@ -56,9 +52,6 @@ const Registration = () => {
                     .catch(error => {
                         console.log(error)
                     })
-
-
-
 
 
             }).catch((error) => {

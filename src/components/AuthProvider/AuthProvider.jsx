@@ -71,7 +71,7 @@ const AuthProvider = ({ children }) => {
             if (user) {
                 setUser(user);
 
-                console.log(user)
+                // console.log(user)
                 // console.log(user.displayName)
                 // console.log(user.email)
                 // console.log(user.photoURL)

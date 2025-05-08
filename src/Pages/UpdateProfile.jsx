@@ -30,14 +30,6 @@ const UpdateProfile = ({ setEditProfile }) => {
                 console.log(error.message);
             });
 
-        // setUser(pre => ({
-        //     ...pre,
-        //     displayName: name,
-        //     photoUrl: phone
-        // }));
-
-        // const updatedUser = { ...user, displayName: name, photoURL: photo };
-        // setUser(updatedUser);
     }
 
 

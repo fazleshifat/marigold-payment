@@ -47,10 +47,10 @@ const BillsPage = () => {
 
                     {selectedCategory && (
                         <div className="text-center mx-auto relative group text-lg font-semibold transition duration-300 ease-in-out">
-                            <div className="dropdown dropdown-hover m-1 cursor-pointer text-gray-100 transition duration-300 ease-in-out">
+                            <div className="dropdown dropdown-hover m-1 cursor-pointer text-gray-300 transition duration-300 ease-in-out">
                                 <Link
                                     to="/bills-page"
-                                    className="m-1 text-center w-fit mx-auto cursor-pointer group-hover:text-gray-200 transition duration-300 ease-in-out"
+                                    className="m-1 text-center underline w-fit mx-auto cursor-pointer group-hover:text-gray-200 transition duration-300 ease-in-out"
                                 >
                                     Bills Category 🡇
                                 </Link>
